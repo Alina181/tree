@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="IS.css">
+</head>
+<body>
+    <!-- Музыкальный плеер -->
+    <div class="music-player" id="music-player">
+        <button class="play-pause" id="play-pause">▶</button>
+        <div class="track-info">
+            <img src="Pictures/k0t.png" alt="Album Cover" class="album-cover">
+            <div class="track-title">
+                <p class="track-name">Track Name</p>
+                <p class="track-artist">Artist Name</p>
+            </div>
+        </div>
+        <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
+        <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
+        <div class="volume-label">Громкость: 50%</div>
+    </div>
+    
+    <!-- Курсор -->
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Музыкальный аудиоплеер -->
+    <audio id="music-player-audio" src=""></audio>
+    
+    <script src="IS.js"></script>
+</body>
+</html>
