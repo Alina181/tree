@@ -167,7 +167,9 @@ top: -2vh;
 .total-time{
 display: inline-block;
 }
-
+.time-container{
+  margin-top: 10%; 
+}
 .track-title {
 position:relative;  
 top: 1vh;
@@ -205,14 +207,13 @@ top: 1vh;
 left: 11vw; 
 }
 .track-name {
-font-size: 2.8vw;
+font-size: 2.3vw;
 }
 .track-artist {
 font-size: 1.8vw;
 }
 .slider {
 margin-top: 3%; /* Упростили отступы */
-width: 18vw; /* Уменьшили ширину для двух ползунков */
 left: 14%; /* Убрал left */
 }
 .volume-label{
@@ -228,13 +229,13 @@ top: -3.3vh ;
 
 #play-button {
 /* left: 10%;  */
-top: 22%; 
+top: 18%; 
 font-size: 7vw;
 }
 
 #pause-button {
 left: 2.8%; 
 font-size: 4vw;
-top: 30.4%;
+top: 28.4%;
 }
 }
