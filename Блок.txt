@@ -1,3 +1,30 @@
+@media screen and (max-width: 1206px), (max-height: 850px) {
+  .time-container {
+    left: 15.5vw;
+    top: 13.5vh;
+    }
+    #play-button {
+      left: 12%; 
+      top: 28.8%; 
+      font-size: 6vw;
+      }
+      
+      #pause-button {
+      left: 3.2%; 
+      font-size: 3.8vw;
+      top: 41%;
+      }
+      .track-title{
+        top: 14vh;
+        left: 12vw;     
+        }
+        .top-left-image {
+          top: 14vh; 
+          left: 2.4vw; 
+          width: 15vw; 
+          height: 20vh; 
+          }
+}
 @media screen and (max-width: 1207px), (max-height: 683px) {
   .top-left-image {
   top: 15vh; 

@@ -1,172 +1,180 @@
 body {
-overflow: hidden;
-height: 100vh;
-width: 100vw;
-cursor: none;
-background-size: cover;
-margin: 0;
-padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  cursor: none;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
+
 .snowflake-cursor {  
-position: absolute;  
-width: 2.2%;   
-height: 5%;   
-background-image: url('1.png');   
-background-size: contain; 
-background-repeat: no-repeat; 
-z-index: 10; 
-pointer-events: none;
+  position: absolute;  
+  width: 2.2%;   
+  height: 5%;   
+  background-image: url('1.png');   
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  z-index: 10; 
+  pointer-events: none;
 }
-/* Анимация градиента */
+
 @keyframes rainbow {
-0% {
-background-position: 0% 50%;
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
 }
-100% {
-background-position: 100% 50%;
-}
-}
+
 .center-image { 
-position: absolute; 
-top: 50%; 
-left: 50%; 
-transform: translate(-50%, -50%); 
-width: 66vw; 
-height: 66vh; 
-background-image: url('image.png'); 
-background-size: contain; 
-background-repeat: no-repeat; 
-background-position: center; 
-z-index: 1; 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 66vw; 
+  height: 66vh; 
+  background-image: url('image.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  z-index: 1; 
 } 
 
-.track-title{
-position:relative; 
-top: 10vh;
-left: 10.5vw;     
+.track-title {
+  position: relative; 
+  top: 10vh;
+  left: 10.5vw;     
 }
 
 .track-name,
-.track-artist{
-color: #fff;
-background-size: cover;
-font-weight: bold;
-margin-bottom: -1.8vh;
+.track-artist {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: -1.8vh;
 }
-.track-name{
-font-size: 2.2vw;
-}
-.track-artist{
-font-size: 1.5vw;
-}
-.top-left-image{
 
+.track-name {
+  font-size: 2.2vw;
 }
+
+.track-artist {
+  font-size: 1.5vw;
+}
+
 .top-left-image {
-position: absolute; 
-top: 14vh; 
-left: 2.4vw; 
-width: 16vw; 
-height: 20vh; 
-background-image: url('ball.png');
-background-size: contain;
-background-repeat: no-repeat;
-z-index: 2; 
+  position: absolute; 
+  top: 14vh; 
+  left: 2.4vw; 
+  width: 16vw; 
+  height: 20vh; 
+  background-image: url('ball.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2; 
 }
+
 .button {
-left: -10%; 
-position: absolute;
-top: 31.8%;
-display: flex;               
-background-color: transparent; 
-border: none; 
-cursor: none; 
-z-index: 5; 
-background: linear-gradient(45deg, #ffffff, #999999);
-left: 5%;   
--webkit-background-clip: text;
--moz-background-clip: text; 
-color: transparent; 
+  position: absolute;
+  display: flex;               
+  background-color: transparent; 
+  border: none; 
+  cursor: none; 
+  z-index: 5; 
+  background: linear-gradient(45deg, #ffffff, #999999);
+  color: transparent; 
+  -webkit-background-clip: text;
+  -moz-background-clip: text; 
 }
+
 #play-button {
-left: 12%; 
-top: 25.8%; 
-font-size: 5.5vw;
+  left: 12%; 
+  top: 25.8%; 
+  font-size: 5.5vw;
 }
 
 #pause-button {
-left: 3.2%; 
-font-size: 3.3vw;
-top: 38%;
+  left: 3.2%; 
+  font-size: 3.3vw;
+  top: 38%;
 }
 
-
 .slider-container {
-display: flex; 
-gap: 20px; 
-width: 65vw; 
-left: 0%;
-top: 0%;
-
+  display: flex; 
+  gap: 20px; 
+  width: 65vw; 
 }
 
 .slider {
-position: relative;
-top: 18vh;
--webkit-appearance: none;
-width: 20vw; 
-appearance: none;
-height: 0.6vh;
-background: linear-gradient(45deg, #ffd700, #1DB954);
-border-radius: 5px;
-cursor: none; 
-margin-top: 8%; 
-left: 14%; 
+  -webkit-appearance: none;
+  width: 20vw; 
+  height: 0.6vh;
+  background: linear-gradient(45deg, #ffd700, #1DB954);
+  border-radius: 5px;
+  cursor: pointer; 
 }
 
 .slider::-webkit-slider-thumb {
--webkit-appearance: none;
-appearance: none;
-width: 2vw;
-height: 6vh;
-border: none;
-background: url('tree.png') no-repeat center center;
-background-size: contain;
-cursor: pointer;
+  -webkit-appearance: none;
+  width: 2vw;
+  height: 6vh;
+  background: url('tree.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-width: 2vw;
-height: 6vh;
-border: none;
-background: url('tree.png') no-repeat center center;
-background-size: contain;
-cursor: pointer;
+  width: 2vw;
+  height: 6vh;
+  background: url('tree.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .volume-label {
-position:relative; 
-display: inline-block;
-color: #ffffff;
-margin-left: 10%; 
-margin-top: 10%; 
-left: 38vw; 
-top: 16vh;
-
+  display: inline-block;
+  color: #ffffff;
+  margin-left: 10%; 
+  margin-top: 10%; 
+  left: 38vw; 
+  top: 16vh;
 }
 
 .time-container {
-position:relative; 
-color: #ffffff; 
-left: 9.5vw;
-top: 16vh;
+  color: #ffffff; 
+  left: 9.5vw;
+  top: 16vh;
 }
+
 .time-container,
 .current-time,
-.total-time{
-display: inline-block;
+.total-time {
+  display: inline-block;
 }
 
-@media screen and (max-width: 426px), (max-height: 683px) {
+@media screen and (max-width: 1207px), (max-height: 686px) {
+  .time-container {
+      left: 15.5vw;
+      top: 13.5vh;
+  }
+  #play-button {
+      top: 28.8%; 
+      font-size: 6vw;
+  }
+  #pause-button {
+      font-size: 3.8vw;
+      top: 41%;
+  }
+  .track-title {
+      top: 14vh;
+      left: 12vw;     
+  }
+}
 
+@media screen and (max-width: 1170px), (max-height: 680px) {
+  .top-left-image {
+      width: 12vw; 
+      height: 18vh; 
+  }
 }

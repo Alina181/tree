@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winter-Wonderland</title>
+    <title>Winter Wonderland</title>
     <link rel="stylesheet" href="tree.css">
     <link rel="icon" type="image/x-icon" href="./frost.ico" />
 </head>
@@ -11,30 +11,24 @@
     <script src="tree.js"></script>
 
     <div class="center-image">
-        <!--  -->
-            <div class="track-title">
-                <p class="track-name">Track Name</p>
-                <p class="track-artist">Artist Name</p>
-            </div>
-        <!--  -->
-        <!--  -->
+        <div class="track-title">
+            <p class="track-name">Track Name</p>
+            <p class="track-artist">Artist Name</p>
+        </div>
         <div class="top-left-image">
             <div class="music-player" id="music-player">
-            <button class="button play-button" id="play-button">▶</button> 
-            <button class="button pause-button" id="pause-button" style="display: none;">▐▐</button>
-        </div>
-        <!--  -->
-        <!--  -->
-        <div class="slider-container"> 
-            <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
-            <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
-        </div>
-        <span class="volume-label">Громкость: 50%</span>
-        <div class="time-container">
-            <span class= "current-time" id="current-time">0:00</span> / <span class= "total-time" id="total-time">0:00</span>
-        </div>
-        <!--  -->
-    </div>    
+                <button class="button play-button" id="play-button">▶</button> 
+                <button class="button pause-button" id="pause-button" style="display: none;">▐▐</button>
+            </div>
+            <div class="slider-container"> 
+                <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
+                <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
+            </div>
+            <span class="volume-label">Громкость: 50%</span>
+            <div class="time-container">
+                <span class="current-time" id="current-time">0:00</span> / <span class="total-time" id="total-time">0:00</span>
+            </div>
+        </div>    
     </div>
     <audio id="music-player-audio" src=""></audio>
 </body>
