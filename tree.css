@@ -44,7 +44,7 @@ body {
 
 .track-title {
   position: relative; 
-  top: 10vh;
+  top: 15vh;
   left: 10.5vw;     
 }
 
@@ -107,7 +107,10 @@ body {
 }
 
 .slider {
+  position: relative;
+  top: 22vh;  
   -webkit-appearance: none;
+  left: 14%; 
   width: 20vw; 
   height: 0.6vh;
   background: linear-gradient(45deg, #ffd700, #1DB954);
@@ -133,48 +136,254 @@ body {
 }
 
 .volume-label {
+  position:relative; 
   display: inline-block;
   color: #ffffff;
   margin-left: 10%; 
   margin-top: 10%; 
   left: 38vw; 
-  top: 16vh;
-}
-
-.time-container {
-  color: #ffffff; 
-  left: 9.5vw;
-  top: 16vh;
-}
-
-.time-container,
-.current-time,
-.total-time {
-  display: inline-block;
-}
-
-@media screen and (max-width: 1207px), (max-height: 686px) {
+  top: 21vh;
+  font-size: 1.4vw;
+  
+  }
+  
   .time-container {
-      left: 15.5vw;
-      top: 13.5vh;
+  position:relative; 
+  color: #ffffff; 
+  left: 14.5vw;
+  font-size: 1.4vw;
+  top: 18vh;
   }
-  #play-button {
-      top: 28.8%; 
-      font-size: 6vw;
+  .time-container,
+  .current-time,
+  .total-time{
+  display: inline-block;
   }
-  #pause-button {
-      font-size: 3.8vw;
-      top: 41%;
+
+@media screen and (max-width: 1204px), (max-height: 680px) {
+.top-left-image {
+width: 14vw; 
+height: 19vh; 
+}
+#play-button {
+top: 28.8%; 
+font-size: 6vw;
+}
+#pause-button {
+font-size: 3.8vw;
+top: 41%;
+}
+.track-title {
+top: 16vh;
+left: 12vw;     
+}
+.time-container {
+left: 15.5vw;
+top: 18.5vh;
+}
+}  
+@media screen and (max-width: 1190px), (max-height: 690px) {
+.top-left-image {
+top: 18vh;
+}
+.volume-label {
+width: 20vw;
+}
+
+}  
+@media screen and (max-width: 1080px), (max-height: 690px) {
+
+#play-button {
+top: 29.3%; 
+font-size: 6.3vw;
+}
+#pause-button {
+font-size: 3.9vw;
+top: 41%;
+}
+.track-title {
+top: 19vh;
+}
+}  
+@media screen and (max-width: 980px), (max-height: 690px) {
+.top-left-image {
+width: 14vw;
+height: 16vh;
+}
+.track-title {
+top: 21vh;
+}
+}  
+@media screen and (max-width: 1080px), (max-height: 690px) {
+
+#play-button {
+top: 29.3%; 
+font-size: 6.3vw;
+}
+#pause-button {
+font-size: 3.9vw;
+top: 41%;
+}
+.track-title {
+top: 19vh;
+}
+}  
+@media screen and (max-width: 980px), (max-height: 690px) {
+.top-left-image {
+width: 14vw;
+height: 16vh;
+}
+.track-title {
+top: 21vh;
+}
+}  
+
+@media screen and (max-width: 930px), (max-height: 690px) {
+.top-left-image {
+top: 20vh;
+}
+.slider {
+top:17vh;
+}
+.volume-label {
+top:17vh;
+}
+.time-container{
+top: 14.8vh;
+}
+}
+@media screen and (max-width: 840px), (max-height: 690px) {
+  .top-left-image {
+  width: 15vw;
+  height: 15vh;
+  }
+  .time-container{
+  top: 14.5vh;
   }
   .track-title {
-      top: 14vh;
-      left: 12vw;     
+  top: 23vh;
   }
 }
-
-@media screen and (max-width: 1170px), (max-height: 680px) {
+@media screen and (max-width: 840px), (max-height: 690px) {
   .top-left-image {
-      width: 12vw; 
-      height: 18vh; 
+    top: 23vh;
   }
+  .slider {
+    top:15vh;
+  }
+  .volume-label {
+    top:14vh;
+    }
+  .time-container{
+    top: 11.5vh;
+  }
+  .track-title {
+    top: 25vh;
+    }
+}
+@media screen and (max-width: 790px), (max-height: 690px) {
+  .top-left-image {
+    width: 14vw;
+    height: 13vh;
+  }
+}
+@media screen and (max-width: 700px), (max-height: 690px) {
+  .track-title {
+    left: 13vh;
+    }
+}
+@media screen and (max-width: 670px), (max-height: 690px) {
+  #play-button {
+    top: 29.3%; 
+    font-size: 7vw;
+    }
+  #pause-button {
+    font-size: 4.3vw;
+    top: 41%;
+  }
+  .track-title {
+    top: 26vh;
+    left: 14vh;
+  }
+  .track-name {
+    font-size: 3vw;
+  }
+  
+  .track-artist {
+    font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 670px), (max-height: 690px) {
+  .track-title {
+    left: 13vh;
+    }
+
+}
+@media screen and (max-width: 610px), (max-height: 690px) {
+  .top-left-image {
+    top: 25vh;
+    width: 13vw;
+    height: 12vh;
+  }
+  .slider {
+    top:11vh;
+  }
+  .volume-label {
+    top:11.8vh;
+    }
+  .time-container{
+    top: 9vh;
+  }
+  .track-title {
+    left: 12vh;
+    }
+}
+@media screen and (max-width: 580px), (max-height: 690px) {
+  .top-left-image {
+    top: 25vh;
+    width: 11vw;
+    height: 11vh;
+  }
+  .track-title {
+    top:27vh;
+    }
+    .volume-label {
+      top:10.8vh;
+      }
+    .time-container{
+      top: 8vh;
+    }
+}
+@media screen and (max-width: 550px), (max-height: 690px) {
+  .track-title {
+    left: 13vw;
+  }
+}
+@media screen and (max-width: 540px), (max-height: 690px) {
+  .track-title {
+    left: 14vw;
+  }
+}
+@media screen and (max-width: 520px), (max-height: 690px) {
+  .top-left-image {
+    top: 26.5vh;
+    width: 12vw;
+    height: 10vh;
+  }
+  .track-title {
+    top: 28vh;
+  }
+  .track-name,
+.track-artist {
+  margin-bottom: -1vh;
+}
+.slider {
+  top:10vh;
+}
+.volume-label {
+  top: 9.8vh;
+  }
+.time-container{
+  top: 7vh;
+}
 }

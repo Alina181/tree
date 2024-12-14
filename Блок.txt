@@ -1,3 +1,78 @@
+@media screen and (max-width: 1207px), (max-height: 686px) {
+  .time-container {
+      left: 15.5vw;
+      top: 19vh;
+  }
+  #play-button {
+      top: 28.8%; 
+      font-size: 6vw;
+  }
+  #pause-button {
+      font-size: 3.8vw;
+      top: 41%;
+  }
+  .track-title {
+      top: 16vh;
+      left: 12vw;     
+  }
+.top-left-image {
+  width: 14vw; 
+  height: 19vh; 
+}
+}
+
+@media screen and (max-width: 1190px), (max-height: 686px) {
+  .top-left-image {
+    top: 16vh;
+  }
+}
+@media screen and (max-width: 1090px), (max-height: 686px) {
+  .top-left-image {
+    top: 19vh;
+    width: 12vw; 
+    height: 17vh; 
+  }
+  .track-title {
+    top: 19vh;
+}
+}
+@media screen and (max-width: 951px), (max-height: 686px) {
+  .top-left-image {
+    top: 19vh;
+    width: 10vw; 
+    height: 15vh; 
+  }
+  .track-title {
+    top: 19vh;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1206px), (max-height: 850px) {
   .time-container {
     left: 15.5vw;
