@@ -1,13 +1,31 @@
 body {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  cursor: none;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
+overflow: hidden;
+height: 100vh;
+width: 100vw;
+cursor: none;
+background-size: cover;
+margin: 0;
+padding: 0;
 }
-
+.snowflake-cursor {  
+position: absolute;  
+width: 2.2%;   
+height: 5%;   
+background-image: url('1.png');   
+background-size: contain; 
+background-repeat: no-repeat; 
+z-index: 10; 
+pointer-events: none;
+}
+/* Анимация градиента */
+@keyframes rainbow {
+0% {
+background-position: 0% 50%;
+}
+100% {
+background-position: 100% 50%;
+}
+}
 .center-image { 
 position: absolute; 
 top: 50%; 
@@ -22,6 +40,28 @@ background-position: center;
 z-index: 1; 
 } 
 
+.track-title{
+position:relative; 
+top: 10vh;
+left: 10.5vw;     
+}
+
+.track-name,
+.track-artist{
+color: #fff;
+background-size: cover;
+font-weight: bold;
+margin-bottom: -1.8vh;
+}
+.track-name{
+font-size: 2.2vw;
+}
+.track-artist{
+font-size: 1.5vw;
+}
+.top-left-image{
+
+}
 .top-left-image {
 position: absolute; 
 top: 14vh; 
@@ -33,27 +73,6 @@ background-size: contain;
 background-repeat: no-repeat;
 z-index: 2; 
 }
-.music-player {
-position: relative; 
-}
-#play-button, #pause-button {
-left: -10%; 
-position:absolute;
-}
-
-#play-button {
-left: 12%; 
-top: 16.8%; 
-font-size: 5.5vw;
-}
-
-#pause-button {
-left: 3.2%; 
-font-size: 3.3vw;
-top: 23%;
-}
-
-
 .button {
 left: -10%; 
 position: absolute;
@@ -66,52 +85,26 @@ z-index: 5;
 background: linear-gradient(45deg, #ffffff, #999999);
 left: 5%;   
 -webkit-background-clip: text;
--moz-background-clip: text; /* Поддержка для Firefox */
+-moz-background-clip: text; 
 color: transparent; 
 }
-
-
-
-
-@keyframes fall {  
-from {  
-transform: translateY(-10px);  
-}  
-to {  
-transform: translateY(100vh);  
-}  
-}  
-
-
-
-.snowflake-cursor {  
-position: absolute;  
-width: 2.2%;  /* Задаем размер снежинки */  
-height: 5%; /* Задаем размер снежинки */  
-background-image: url('1.png'); /* Путь к изображению снежинки */  
-background-size: contain; 
-background-repeat: no-repeat; 
-z-index: 10; 
-pointer-events: none; /* Игнорировать события мыши на этом элементе */  
+#play-button {
+left: 12%; 
+top: 25.8%; 
+font-size: 5.5vw;
 }
 
-
-
-
-/* Анимация градиента */
-@keyframes rainbow {
-0% {
-background-position: 0% 50%;
+#pause-button {
+left: 3.2%; 
+font-size: 3.3vw;
+top: 38%;
 }
-100% {
-background-position: 100% 50%;
-}
-}
+
 
 .slider-container {
-display: flex; /* Используем flexbox для контейнера */
-gap: 20px; /* Расстояние между ползунками */
-width: 65vw; /* Уменьшили ширину для двух ползунков */
+display: flex; 
+gap: 20px; 
+width: 65vw; 
 left: 0%;
 top: 0%;
 
@@ -119,23 +112,23 @@ top: 0%;
 
 .slider {
 position: relative;
-top: 100%;
+top: 18vh;
 -webkit-appearance: none;
-width: 20vw; /* Уменьшили ширину для двух ползунков */
+width: 20vw; 
 appearance: none;
-height: 0.8vh;
+height: 0.6vh;
 background: linear-gradient(45deg, #ffd700, #1DB954);
 border-radius: 5px;
-cursor: none; /* Убрал комментарий */
-margin-top: 8%; /* Упростили отступы */
-left: 14%; /* Убрал left */
+cursor: none; 
+margin-top: 8%; 
+left: 14%; 
 }
 
 .slider::-webkit-slider-thumb {
 -webkit-appearance: none;
 appearance: none;
-width: 20px;
-height: 20px;
+width: 2vw;
+height: 6vh;
 border: none;
 background: url('tree.png') no-repeat center center;
 background-size: contain;
@@ -143,8 +136,8 @@ cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-width: 20px;
-height: 20px;
+width: 2vw;
+height: 6vh;
 border: none;
 background: url('tree.png') no-repeat center center;
 background-size: contain;
@@ -155,91 +148,25 @@ cursor: pointer;
 position:relative; 
 display: inline-block;
 color: #ffffff;
-margin-left: 10px; 
+margin-left: 10%; 
 margin-top: 10%; 
 left: 38vw; 
+top: 16vh;
+
 }
 
 .time-container {
 position:relative; 
-color: white; 
-left: 13.5vw;
-top: -2vh;
+color: #ffffff; 
+left: 9.5vw;
+top: 16vh;
 }
 .time-container,
 .current-time,
 .total-time{
 display: inline-block;
 }
-.time-container{
-  margin-top: -5vh; 
-}
-.track-title {
-position:relative;  
-top: 1vh;
-left: 9vw; 
-display: flex;
-flex-direction: column;
-}
-
-.track-name {
-position:relative;  
-width: 28vw;
-font-size: 2.2vw;
-display: inline-block;
-font-weight: bold;
-color: #fff;
-margin-bottom: -5.8%;
-}
-.track-artist {
-display: grid; /* Установим элемент как grid-контейнер */
-place-items: center;
-font-size: 1.5vw;
-color: #fff;
-background-position: center; 
-}
 
 @media screen and (max-width: 426px), (max-height: 683px) {
-.top-left-image {
-top: 28vh; 
-width: 10vw; 
-height: 10vh; 
-}
 
-.track-title {
-top: 1vh;
-left: 11vw; 
-}
-.track-name {
-font-size: 2.3vw;
-}
-.track-artist {
-font-size: 1.8vw;
-}
-.slider {
-margin-top: 3%; /* Упростили отступы */
-left: 14%; /* Убрал left */
-}
-.volume-label{
-width: 100vw; 
-margin-top: 5%; 
-font-size: 2vw;
-}
-.time-container{
-font-size: 2vw;
-top: -3.3vh ;
-}
-
-
-#play-button {
-/* left: 10%;  */
-top: 18%; 
-font-size: 7vw;
-}
-
-#pause-button {
-left: 2.8%; 
-font-size: 4vw;
-top: 28.4%;
-}
 }

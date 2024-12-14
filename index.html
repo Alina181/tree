@@ -9,33 +9,33 @@
 </head>
 <body>
     <script src="tree.js"></script>
+
     <div class="center-image">
+        <!--  -->
+            <div class="track-title">
+                <p class="track-name">Track Name</p>
+                <p class="track-artist">Artist Name</p>
+            </div>
+        <!--  -->
+        <!--  -->
         <div class="top-left-image">
             <div class="music-player" id="music-player">
-                <button class="button play-button" id="play-button">▶</button> <!-- Кнопка Play -->
-                <button class="button pause-button" id="pause-button" style="display: none;">▐▐</button> <!-- Кнопка Pause, скрыта по умолчанию -->
-                <div class="track-info">
-                  <!-- <img src="Pictures/k0t.png" alt="Album Cover" class="album-cover"> -->
-                  <div class="track-title">
-                      <p class="track-name">Track Name</p>
-                      <p class="track-artist">Artist Name</p>
-                  </div>
-              </div>
-              <div class="slider-container"> <!-- Добавили этот div -->
-                <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
-                <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
-              </div> <!-- Закрыли div -->
-                <span class="volume-label">Громкость: 50%</span>
-            </div>
+            <button class="button play-button" id="play-button">▶</button> 
+            <button class="button pause-button" id="pause-button" style="display: none;">▐▐</button>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="slider-container"> 
+            <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
+            <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
+        </div>
+        <span class="volume-label">Громкость: 50%</span>
         <div class="time-container">
-          <span class= "current-time" id="current-time">0:00</span> / <span class= "total-time" id="total-time">0:00</span>
+            <span class= "current-time" id="current-time">0:00</span> / <span class= "total-time" id="total-time">0:00</span>
         </div>
-            <!-- Курсор -->
-            <div class="cursor-follower" id="cursor-follower"></div>
-
-            <!-- Музыкальный аудиоплеер -->
-            <audio id="music-player-audio" src=""></audio>
-        </div>
+        <!--  -->
+    </div>    
     </div>
+    <audio id="music-player-audio" src=""></audio>
 </body>
 </html>
