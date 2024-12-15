@@ -67,8 +67,8 @@ body {
   position: absolute; 
   top: 14vh; 
   left: 2.4vw; 
-  width: 16vw; 
-  height: 20vh; 
+  width: 20%; 
+  height: 30%; 
   background-image: url('ball.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -90,14 +90,14 @@ body {
 
 #play-button {
   left: 12%; 
-  top: 25.8%; 
+  top: 29%; 
   font-size: 5.5vw;
 }
 
 #pause-button {
   left: 3.2%; 
   font-size: 3.3vw;
-  top: 38%;
+  top: 39%;
 }
 
 .slider-container {
@@ -144,6 +144,7 @@ body {
   left: 38vw; 
   top: 21vh;
   font-size: 1.4vw;
+  width: 20vw;
   
   }
   
@@ -160,230 +161,319 @@ body {
   display: inline-block;
   }
 
-@media screen and (max-width: 1204px), (max-height: 680px) {
-.top-left-image {
-width: 14vw; 
-height: 19vh; 
-}
-#play-button {
-top: 28.8%; 
-font-size: 6vw;
-}
-#pause-button {
-font-size: 3.8vw;
-top: 41%;
-}
-.track-title {
-top: 16vh;
-left: 12vw;     
-}
-.time-container {
-left: 15.5vw;
-top: 18.5vh;
-}
-}  
-@media screen and (max-width: 1190px), (max-height: 690px) {
-.top-left-image {
-top: 18vh;
-}
-.volume-label {
-width: 20vw;
-}
-
-}  
-@media screen and (max-width: 1080px), (max-height: 690px) {
-
-#play-button {
-top: 29.3%; 
-font-size: 6.3vw;
-}
-#pause-button {
-font-size: 3.9vw;
-top: 41%;
-}
-.track-title {
-top: 19vh;
-}
-}  
-@media screen and (max-width: 980px), (max-height: 690px) {
-.top-left-image {
-width: 14vw;
-height: 16vh;
-}
-.track-title {
-top: 21vh;
-}
-}  
-@media screen and (max-width: 1080px), (max-height: 690px) {
-
-#play-button {
-top: 29.3%; 
-font-size: 6.3vw;
-}
-#pause-button {
-font-size: 3.9vw;
-top: 41%;
-}
-.track-title {
-top: 19vh;
-}
-}  
-@media screen and (max-width: 980px), (max-height: 690px) {
-.top-left-image {
-width: 14vw;
-height: 16vh;
-}
-.track-title {
-top: 21vh;
-}
-}  
-
-@media screen and (max-width: 930px), (max-height: 690px) {
-.top-left-image {
-top: 20vh;
-}
-.slider {
-top:17vh;
-}
-.volume-label {
-top:17vh;
-}
-.time-container{
-top: 14.8vh;
-}
-}
-@media screen and (max-width: 840px), (max-height: 690px) {
-  .top-left-image {
-  width: 15vw;
-  height: 15vh;
-  }
-  .time-container{
-  top: 14.5vh;
-  }
-  .track-title {
-  top: 23vh;
-  }
-}
-@media screen and (max-width: 840px), (max-height: 690px) {
-  .top-left-image {
-    top: 23vh;
-  }
-  .slider {
-    top:15vh;
-  }
-  .volume-label {
-    top:14vh;
+  @media screen and (max-width: 1204px), (max-height: 680px) {
+    .top-left-image {
+    width: 14vw; 
+    height: 19vh; 
     }
-  .time-container{
-    top: 11.5vh;
-  }
-  .track-title {
-    top: 25vh;
+    #play-button {
+    top: 28.8%; 
+    font-size: 6vw;
     }
-}
-@media screen and (max-width: 790px), (max-height: 690px) {
-  .top-left-image {
-    width: 14vw;
-    height: 13vh;
-  }
-}
-@media screen and (max-width: 700px), (max-height: 690px) {
-  .track-title {
-    left: 13vh;
-    }
-}
-@media screen and (max-width: 670px), (max-height: 690px) {
-  #play-button {
-    top: 29.3%; 
-    font-size: 7vw;
-    }
-  #pause-button {
-    font-size: 4.3vw;
+    #pause-button {
+    font-size: 3.8vw;
     top: 41%;
-  }
-  .track-title {
-    top: 26vh;
-    left: 14vh;
-  }
-  .track-name {
-    font-size: 3vw;
-  }
-  
-  .track-artist {
-    font-size: 1.8vw;
-  }
-}
-@media screen and (max-width: 670px), (max-height: 690px) {
-  .track-title {
-    left: 13vh;
+    }
+    .track-title {
+    top: 16vh;
+    left: 12vw;     
+    }
+    .time-container {
+    left: 15.5vw;
+    top: 18.5vh;
+    }
+    }  
+    @media screen and (max-width: 1130px), (max-height: 662px) {
+      .top-left-image{
+        top:30%;
+      }
+      .track-title{
+        top: 30%;
+      }
+    }
+    @media screen and (max-width: 1000px), (max-height: 662px) {
+      .top-left-image{
+        width: 15vw;
+        height: 17vh;
+      }
+      .track-title{
+        top: 36%;
+      }
+    }
+    @media screen and (max-width: 910px), (max-height: 662px) {
+      .top-left-image{
+        top: 30%;
+        width: 15vw;
+        height: 16vh;
+      }
+      .track-title{
+        left: 20%;
+      }
+      .slider{
+        top: 14vw;
+      }
+      .volume-label {
+        top: 18.5vh;
+    }
+    .time-container {
+      top: 16vh;
+    }
+    }
+    @media screen and (max-width: 850px), (max-height: 662px) {
+      .top-left-image{
+        top: 32%;
+        width: 14vw;
+        height: 15vh;
+      }
+      .slider{
+        top: 13vw;
+      }
+      .volume-label {
+        top: 16.5vh;
+    }
+    .time-container {
+      top: 14vh;
+    }
+    }
+    @media screen and (max-width: 810px), (max-height: 662px) {
+      .top-left-image{
+        top: 35%;
+        width: 13vw;
+        height: 14vh;
+      }
+      .slider{
+        top: 12vw;
+      }
+      .volume-label {
+        top: 14.5vh;
+    }
+    .time-container {
+      top: 11.5vh;
+    }
+    .track-title{
+      top: 38%;
+    }
     }
 
-}
-@media screen and (max-width: 610px), (max-height: 690px) {
-  .top-left-image {
-    top: 25vh;
-    width: 13vw;
-    height: 12vh;
-  }
-  .slider {
-    top:11vh;
-  }
-  .volume-label {
-    top:11.8vh;
+    @media screen and (max-width: 760px), (max-height: 662px) {
+      .top-left-image{
+        top: 35%;
+        width: 12vw;
+        height: 13vh;
+      }
+      .slider{
+        top: 12vw;
+      }
+      .volume-label {
+        top: 13.5vh;
     }
-  .time-container{
-    top: 9vh;
-  }
-  .track-title {
-    left: 12vh;
+    .time-container {
+      top: 10.5vh;
     }
-}
-@media screen and (max-width: 580px), (max-height: 690px) {
-  .top-left-image {
-    top: 25vh;
-    width: 11vw;
-    height: 11vh;
-  }
-  .track-title {
-    top:27vh;
+    .track-title{
+      top: 39%;
+    }
+    }
+    @media screen and (max-width: 720px), (max-height: 662px) {
+      .top-left-image{
+        top: 36%;
+        width: 11vw;
+        height: 12vh;
+      }
+      .volume-label {
+        top: 12.5vh;
+    }
+    .time-container {
+      top: 9.5vh;
+    }
+    }
+    @media screen and (max-width: 660px), (max-height: 662px) {
+      .top-left-image{
+        top: 36.5%;
+        width: 10vw;
+        height: 11vh;
+      }
+    .volume-label {
+        top: 11.5vh;
+    }
+    .time-container {
+      top: 8.5vh;
+    }
+    .track-title{
+      top: 40%;
+    }
+    .track-name,
+    .track-artist {
+    margin-bottom: -1.4vh;
+    }
+    }
+    @media screen and (max-width: 600px), (max-height: 662px) {
+      .top-left-image{
+        top: 38%;
+        width: 9.5vw;
+        height: 10vh;
+      }
+      .track-title{
+        top: 41%;
+      }
+      .slider{
+        top: 11vw;
+      }
+      .volume-label {
+        top: 10.5vh;
+    }
+    .time-container {
+      top: 7.5vh;
+    }
+    #play-button{
+      font-size: 6vw;
+    }
+    #pause-button{
+      font-size: 3.5vw;
+    }
+    }
+    @media screen and (max-width: 560px), (max-height: 662px) {
+      .top-left-image{
+        top: 39%;
+        width: 8.5vw;
+        height: 9vh;
+      }
+      .track-title{
+        top: 42%;
+      }
+      .volume-label {
+        top: 9vh;
+    }
+    .time-container {
+      top: 6vh;
+    }
+    .track-name,
+    .track-artist {
+      margin-bottom: -1vh;
+    }
+    #play-button{
+      top: 35%;
+      font-size: 5.2vw;
+    }
+    #pause-button{
+      font-size: 3vw;
+    }
+    }
+    @media screen and (max-width: 530px), (max-height: 662px) {
+      .top-left-image{
+        top: 42%;
+        width: 7.5vw;
+        height: 8vh;
+      }
+      .slider{
+        top: 9vw;
+      }
+      .volume-label {
+        top: 7vh;
+    }
+    .time-container {
+      top: 4vh;
+    }
+    #play-button{
+      top: 33%;
+    }
+
+    }
+    @media screen and (max-width: 500px), (max-height: 662px) {
+      #play-button{
+        top: 31%;
+      }
+    #pause-button{
+      left: -1%;
+    }
+      .volume-label {
+        top: 7.5vh;
+    }
+    .time-container {
+      top: 4.5vh;
+    }
+    .track-title{
+      top: 44%;
+    }
+    .slider{
+      top: 11vw;
+    }
+    }
+    @media screen and (max-width: 450px), (max-height: 662px) {
+      .volume-label {
+        top: 6.5vh;
+    }
+    .time-container {
+      top: 3.5vh;
+    }
+    .top-left-image{
+      top: 43%;
+    }
+    .slider{
+      top: 10vw;
     }
     .volume-label {
-      top:10.8vh;
-      }
-    .time-container{
-      top: 8vh;
+      top: 6vh;
+  }
+  .time-container {
+    top: 3vh;
+  }
+  #play-button{
+    top: 28%;
+  }
+#pause-button{
+  top: 35%;
+}
     }
-}
-@media screen and (max-width: 550px), (max-height: 690px) {
-  .track-title {
-    left: 13vw;
+    @media screen and (max-width: 410px), (max-height: 662px) {
+      .track-name,
+      .track-artist {
+      margin-bottom: -0.4vh;
+      }
+      #play-button{
+        top: 24%;
+      }
+    #pause-button{
+      top: 33%;
+    }
+    .volume-label {
+      top: 5.2vh;
   }
-}
-@media screen and (max-width: 540px), (max-height: 690px) {
-  .track-title {
-    left: 14vw;
+  .time-container {
+    top: 2.5vh;
   }
-}
-@media screen and (max-width: 520px), (max-height: 690px) {
-  .top-left-image {
-    top: 26.5vh;
-    width: 12vw;
-    height: 10vh;
+    }
+    @media screen and (max-width: 390px), (max-height: 662px) {
+    .slider{
+    height: 0.3vh;
   }
-  .track-title {
-    top: 28vh;
+  .top-left-image{
+    top: 44%;
   }
-  .track-name,
-.track-artist {
-  margin-bottom: -1vh;
-}
-.slider {
-  top:10vh;
-}
-.volume-label {
-  top: 9.8vh;
+  #play-button{
+    left: 6%;
   }
-.time-container{
-  top: 7vh;
+#pause-button{
+  left: -5%;
 }
-}
+    }
+    @media screen and (max-width: 320px), (max-height: 662px) {
+      .volume-label {
+        top: 3.8vh;
+        left: 42vw;
+    }
+    .time-container {
+      top: 1vh;
+    }
+    #play-button{
+      top: 18%;
+      left: 3%;
+    }
+  #pause-button{
+    top: 26%;
+    left: -11%;
+  }
+  .track-title{
+    top: 45%;
+  }
+    }
