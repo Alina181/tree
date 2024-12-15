@@ -477,3 +477,28 @@ body {
     top: 45%;
   }
     }
+
+    @media screen and (max-width: 320px), (max-height: 885px) {
+      .volume-label {
+        top: 5.5vh;
+        left: 42vw;
+    }
+    .time-container {
+      top: 3vh;
+    }
+    #play-button{
+      top: 16%;
+      left: 3%;
+    }
+  #pause-button{
+    top: 26%;
+    left: -11%;
+  }
+  .track-title{
+    top: 45%;
+  }
+  .slider{
+    top: 6vh;
+    height: 0.3vh;
+  }
+    }
