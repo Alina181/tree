@@ -1,141 +1,189 @@
 /* Общий стиль */
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1e3b70, #1f3b72, #2d5a9a);
-  background-size: 400% 400%;
-  animation: rainbow 10s linear infinite;
-  font-family: Arial, sans-serif;
-}
+body {   
+  margin: 0;   
+  padding: 0;   
+  display: flex;   
+  justify-content: center;   
+  align-items: center;   
+  min-height: 100vh;   
+  background-color: #001133;   
+  font-family: Arial, sans-serif;   
+  color: #fff;   
+  overflow: hidden;  
+}   
 
-/* Курсор снежинки */
-.snowflake-cursor {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: url('1.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 10;
-}
+/* Контейнер плеера */
+.center-image {   
+  width: 90%;   
+  max-width: 700px;   
+  padding: 30px;   
+  border-radius: 60px;   
+  background: url('image.png') no-repeat center;   
+  background-size: cover;   
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);   
+  text-align: center;   
+  position: relative; /* Для позиционирования внутренних элементов */ 
+}   
 
-/* Центрированный контейнер */
-.center-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
-  height: auto;
-  background-image: url('image.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
-}
+/* Контейнер с изображением и кнопками в левом верхнем углу */
+.ball-button-container { 
+  position: absolute; 
+  top: 60px;    /* Располагаем в левом верхнем углу */ 
+  left: 20px;   /* Расстояние от левого края */ 
+  width: 80px;  /* Размер контейнера с шаром */ 
+  height: 80px; /* Размер контейнера с шаром */ 
+  display: flex; /* Чтобы кнопки расположились рядом друг с другом */ 
+  justify-content: space-between; 
+  align-items: center; 
+  background: url('ball.png') no-repeat center center; 
+  background-size: contain; /* Масштабируем изображение */ 
+  transform: scale(1.35); /* Увеличиваем изображение на 35% */ 
+  cursor: pointer;  /* Курсор при наведении */ 
+}   
+
+/* Стиль для кнопок воспроизведения и паузы */
+.button { 
+  width: 100%;  /* Заполняем весь контейнер */ 
+  height: 100%; /* Заполняем весь контейнер */ 
+  border: none; 
+  background-color: transparent; 
+  font-size: 1.5rem; 
+  color: rgb(142, 0, 250); 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  cursor: pointer; 
+  display: flex; /* Центрируем внутри контейнера */ 
+  justify-content: center; 
+  align-items: center; 
+} 
+
+/* Стиль для кнопки воспроизведения */
+.play-button { 
+  display: inline-block; 
+  font-size: 2.5rem; /* Сделать символ воспроизведения больше */ 
+  top: 8px;    /* Располагаем в левом верхнем углу */ 
+  left: 2.5px; 
+} 
+
+/* Стиль для кнопки паузы */
+.pause-button { 
+  display: inline-block; 
+  font-size: 1.6rem; /* Сделать символ паузы больше */ 
+  top: 6px;    /* Располагаем в левом верхнем углу */ 
+  left: -3px; 
+} 
 
 /* Заголовок трека */
-.track-title {
-  position: relative;
-  text-align: center;
-  margin-top: 20px;
-}
+.track-title {   
+  text-align: left; /* Выравниваем текст влево */
+  padding-left: 100px; /* Добавляем отступ слева */
+  margin-bottom: 20px;   
+  margin-top: 60px;   
 
-.track-name,
-.track-artist {
-  color: #fff;
-  margin: 0;
-}
+}   
 
-.track-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+.track-name {   
+  left: 10px;
+  font-size: 1.5rem;   
+  font-weight: bold;   
+  margin-bottom: 8px;   
+}   
 
-.track-artist {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* Кнопки управления */
-.button {
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-#play-button {
-  position: relative;
-  margin-right: 10px;
-}
-
-#pause-button {
-  position: relative;
-}
+.track-artist {   
+  font-size: 1rem;   
+  opacity: 0.8;   
+  margin: 0;   
+}   
 
 /* Ползунки */
-.slider {
-  width: 100%;
-  margin-top: 10px;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 5px;
-  background: linear-gradient(to right, #ffd700, #1DB954);
-  border-radius: 5px;
-  outline: none;
+.slider-container {   
+  display: flex;   
+  align-items: center;   
+  justify-content: space-between;   
+  margin-top: 80px; /* Добавляем отступ сверху, чтобы ползунки сдвинулись ниже */
+  margin-bottom: 5px;   
+}   
+
+.slider {   
+  flex: 1;   
+  margin: 0 15px;   
+  height: 5px;   
+  background: linear-gradient(to right, #ffd700, #1DB954);   
+  border-radius: 5px;   
+  outline: none;   
+  -webkit-appearance: none;   
+}   
+
+.slider::-webkit-slider-thumb {   
+  -webkit-appearance: none;   
+  appearance: none;   
+  width: 15px;   
+  height: 15px;   
+  background: url('tree.png') no-repeat center;   
+  background-size: contain;   
+  cursor: pointer;   
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: url('tree.png') no-repeat center;
-  background-size: contain;
-  cursor: pointer;
+#time-label, #volume-label {   
+  font-size: 0.8rem;   
+}
+@media (max-width:825px) , (max-height:655px) { 
+.center-image { 
+  padding: 25px;   
+}
+.slider-container {   
+  margin-top: 40px; 
+
+}
+}
+@media (max-width:500px) , (max-height:655px) { 
+  .track-name {   
+    left: 10px;
+    font-size: 1.2rem;   
+    font-weight: bold;   
+    margin-bottom: 8px;   
+  }   
+  
+  .track-artist {   
+    font-size: 1rem;   
+    opacity: 0.8;   
+    margin: 0;   
+  }   
+
+.slider-container .slider-label {
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+}
+/* @media (max-width:770px) (max-height:655px) { 
 }
 
-/* Область времени */
-.time-container {
-  color: #fff;
-  font-size: 0.8rem;
-  margin-top: 5px;
-  text-align: center;
+@media (max-width:400px) (max-height:655px) { 
+}
+@media (max-width:300px) (max-height:655px) { 
+}
+@media (max-width:200px) (max-height:655px) { 
+}
+@media (max-width:825px) (max-height:655px) { 
+}
+@media (max-width:825px) (max-height:655px) { 
 }
 
-/* Анимация фона */
-@keyframes rainbow {
-  0% {
-      background-position: 0% 50%;
-  }
-  100% {
-      background-position: 100% 50%;
-  }
+@media (max-width:825px) (max-height:280px) { 
 }
+@media (max-width:770px) (max-height:280px) { 
+}
+@media (max-width:500px) (max-height:280px) { 
+}
+@media (max-width:400px) (max-height:280px) { 
+}
+@media (max-width:300px) (max-height:280px) { 
+}
+@media (max-width:200px) (max-height:280px) { 
+}
+@media (max-width:1200px) (max-height:300px) { 
+}
+@media (max-width:825px) (max-height:655px) { 
+} */
 
-/* Неоновая змейка */
-.neon-dot {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: fade 0.5s linear infinite;
-}
-
-@keyframes fade {
-  0% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-  }
-}

@@ -10,21 +10,22 @@
 <body>
     <div class="center-image">
         <div class="track-title">
-            <p class="track-name">Track Name</p>
-            <p class="track-artist">Artist Name</p>
+            <p class="track-name">Дискотека Авария</p>
+            <p class="track-artist">Новогодняя</p>
         </div>
-        <div class="top-left-image">
-            <div class="music-player" id="music-player">
-                <button class="button play-button" id="play-button">▶</button>
+        <div class="controls">
+            <div class="ball-button-container">
+                <button class="button play-button" id="play-button">▶</button>   
                 <button class="button pause-button" id="pause-button" style="display: none;">▐▐</button>
             </div>
             <div class="slider-container">
+                <!-- Ползунок музыки -->
                 <input type="range" class="slider" id="music-slider" min="0" max="100" value="0">
+                <span class="current-time" id="current-time">0:00</span> /
+                <span class="total-time" id="total-time">0:00</span>
+                <!-- Ползунок громкости -->
                 <input type="range" class="slider" id="volume-slider" min="0" max="100" value="50">
-            </div>
-            <span class="volume-label">Громкость: 50%</span>
-            <div class="time-container">
-                <span class="current-time" id="current-time">0:00</span> / <span class="total-time" id="total-time">0:00</span>
+                <span class="volume-label">Громкость: 50%</span>
             </div>
         </div>
     </div>

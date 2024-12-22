@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Создание неоновой змейки
-    const numDots = 60;
+    const numDots = 20;
     const dots = [];
     let mouseX = 0, mouseY = 0;
 
@@ -134,10 +134,7 @@ playBtn.addEventListener('click', playMusic);
     // Обработка нажатий клавиш
     document.addEventListener('keydown', (event) => {
         switch (event.code) {
-            case 'Space': // Воспроизведение/Пауза
-                event.preventDefault();
-                playMusic();
-                break;
+
             case 'ArrowRight': // Следующий трек
                 currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
                 loadTrack(currentTrackIndex);

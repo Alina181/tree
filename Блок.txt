@@ -1,307 +1,143 @@
-
-  @media screen and (max-width: 1204px), (max-height: 680px) {
-    .top-left-image {
-    width: 14vw; 
-    height: 19vh; 
-    }
-    #play-button {
-    top: 28.8%; 
-    font-size: 6vw;
-    }
-    #pause-button {
-    font-size: 3.8vw;
-    top: 41%;
-    }
-    .track-title {
-    top: 16vh;
-    left: 12vw;     
-    }
-    .time-container {
-    left: 15.5vw;
-    top: 18.5vh;
-    }
-    }  
-    @media screen and (max-width: 1130px), (max-height: 662px) {
-      .top-left-image{
-        top:30%;
-      }
-      .track-title{
-        top: 30%;
-      }
-    }
-    @media screen and (max-width: 912px), (max-height: 460px) {
-      #play-button {
-        left: 8.8%; 
-        font-size: 5.5vw;
-        }
-        #pause-button {
-        font-size: 3vw;
-        top: 41%;
-        }
-    }
-    @media screen and (max-width: 730px), (max-height: 460px) {
-      .top-left-image{
-        width: 12vw;
-        height: 16vh;
-      }
-      .slider{
-        top:17vh;
-      }
-      .volume-label{
-        top: 17vh;
-      }
-      .time-container{
-        top: 13vh;
-      }
-    }
-    @media screen and (max-width: 665px), (max-height: 460px) {
-      .top-left-image{
-        width: 11vw;
-        height: 15vh;
-      }
-      #play-button {
-        top: 30%;
-        font-size: 5.5vw;
-        }
-        .track-title{
-          top: 34%;
-        }
-    }
-    @media screen and (max-width: 615px), (max-height: 460px) {
-      .top-left-image{
-        width: 10vw;
-        height: 14vh;
-      }
-    }
-    @media screen and (max-width: 585px), (max-height: 460px) {
-      .top-left-image{
-        top: 38%;
-        width: 10vw;
-        height: 13vh;
-      }
-      .track-title{
-        top: 38%;
-      }
-      .slider{
-        top:12vh;
-      }
-      .volume-label{
-        top: 12vh;
-      }
-      .time-container{
-        top: 8vh;
-      }
-    }
-    @media screen and (max-width: 585px), (max-height: 460px) {
-      .top-left-image{
-        width: 10vw;
-        height: 12vh;
-      }
-    }
-    @media screen and (max-width: 455px), (max-height: 460px) {
-      .top-left-image{
-        width: 10vw;
-        height: 11vh;
-      }
-    }
-    @media screen and (max-width: 420px), (max-height: 460px) {
-      .top-left-image{
-        width: 10vw;
-        height: 10vh;
-      }
-      .track-name,
-      .track-artist {
-        margin-bottom: -0.8vh;
-      }
-      .slider{
-        top:10vh;
-      }
-      .volume-label{
-        top: 9vh;
-      }
-      .time-container{
-        top: 5vh;
-      }
-      .track-title{
-        top: 40%;
-      }
-    }
-    @media screen and (max-width: 380px), (max-height: 460px) {
-      .top-left-image{
-        top: 43%;
-        width: 10vw;
-        height: 9vh;
-      }
-      .track-title{
-        top: 44%;
-      }
-      .track-name{
-        font-size: 1.8vh;
-      }
-      .track-artist{
-        font-size: 1.2vh;
-      }
-      .slider{
-        top:7vh;
-        height: 0.2vh;
-      }
-      .volume-label{
-        top: 5vh;
-        left: 40vw;
-      }
-      .time-container{
-        top: 1vh;
-      }
-      #play-button {
-        left: 0.1vw;
-      }
-      #pause-button{
-        left: -0.5vw;
-      }
-    }
-    @media screen and (max-width: 300px), (max-height: 460px) {
-      .top-left-image{
-        top: 43%;
-        width: 9vw;
-        height: 7vh;
-      }
-    }
-    @media screen and (max-width: 280px), (max-height: 460px) {
-      .track-name{
-        font-size: 1.6vh;
-      }
-      .track-artist{
-        font-size: 1vh;
-      }
-      .track-title{
-        top: 44%;
-        left: 24%;
-      }
-      .top-left-image{
-        top: 43%;
-        width: 9vw;
-        height: 6.8vh;
-      }
-      .slider{
-        top:7vh;
-        height: 0.15vh;
-        width: 27%;
-      }
-    }
-    @media screen and (max-width: 260px), (max-height: 460px) {
-      .track-name{
-        font-size: 1.4vh;
-      }
-      .track-artist{
-        font-size: 0.8vh;
-      }
-    }
-    @media screen and (max-width: 240px), (max-height: 460px) {
-      .track-title{
-        top: 46%;
-        left: 24%;
-      }
-      .track-name{
-        font-size: 1.2vh;
-      }
-      .track-artist{
-        font-size: 0.6vh;
-      }
-      .top-left-image{
-        top: 44%;
-        width: 8vw;
-        height: 5.8vh;
-      }
-      .slider{
-        top:6vh;
-      }
-      .volume-label{
-        top: 4vh;
-      }
-      .time-container{
-        top: -0.4vh;
-      }
-      .track-name,
-      .track-artist{
-        margin-bottom: -0.5vh;
-      }
-      #play-button {
-        top: 1.5vh;
-        left: -0.2vw;
-      }
-      #pause-button{
-        top: 2.2vh;
-        left: -1vw;
-      }
-    }
-    @media screen and (max-width: 240px), (max-height: 460px) {
-      .top-left-image{
-        top: 46%;
-        width: 7vw;
-        height: 5vh;
-      } 
-      #play-button {
-        top: 1.2vh;
-        left: -1.4vw;
-      }
-      #pause-button{
-        top: 1.7vh;
-        left: -2.1vw;
-      }
-      .slider{
-        top:3.8vh;
-        width: 20%;
-      }
-      .volume-label{
-        top: 1.8vh;
-      }
-      .time-container{
-        top: -2.3vh;
-      }
-      .track-name{
-        font-size: 1vh;
-      }
-      .track-artist{
-        font-size: 0.4vh;
-      }
-      .track-name,
-      .track-artist{
-        margin-bottom: 0.1vh;
-      }
-    }
-    @media screen and (max-width: 500px), (max-height: 650px) {
-      .top-left-image {
-        top:42%;
-        width: 8vw;
-        height: 8vh;
-      }
-    .track-title {
-      top: 30vh;
-      left: 15.5vw;     
-    }
-    
-    .track-name,
-    .track-artist {
-      margin-bottom: -0.1vh;
-    }
-    .slider{
-      top:9vh;
-      left: 8%;
-      height: 0.2vh;
-        }
-    #play-button {
-      top: 27%; 
-    }
-#pause-button {
-  top: 38%;
-  left: -1%;
+/* Общий стиль */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3b70, #1f3b72, #2d5a9a);
+  animation: rainbow 5s linear infinite;
+  font-family: Arial, sans-serif;
 }
-    .volume-label {
-      top: 7.9vh;
-      left: 46vw;
-    }
-  .time-container {
-    top: 4.8vh;
-    left: 13vw;
+
+/* Курсор снежинки */
+.snowflake-cursor {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Центрированный контейнер */
+.center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  background-image: url('image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Заголовок трека */
+.track-title {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.track-name,
+.track-artist {
+  color: #fff;
+  margin: 0;
+}
+
+.track-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.track-artist {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Кнопки управления */
+.button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#play-button {
+  position: relative;
+  margin-right: 10px;
+}
+
+#pause-button {
+  position: relative;
+}
+
+/* Ползунки */
+.slider {
+  width: 100%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: linear-gradient(to right, #ffd700, #1DB954);
+  border-radius: 5px;
+  outline: none;
+}
+.volume-label{
+  color: #fff;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: url('tree.png') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+/* Область времени */
+.time-container {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Анимация фона */
+@keyframes rainbow {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+/* Неоновая змейка */
+.neon-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fade 0.5s linear infinite;
+}
+
+@keyframes fade {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
   }
 }
