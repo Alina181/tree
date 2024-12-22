@@ -102,13 +102,13 @@ body {
 
 .slider-container {
   display: flex; 
-  gap: 20px; 
+  gap: 60px; 
   width: 65vw; 
 }
 
 .slider {
   position: relative;
-  top: 22vh;  
+  top: 20vh;  
   -webkit-appearance: none;
   left: 14%; 
   width: 20vw; 
@@ -191,314 +191,279 @@ body {
         top: 30%;
       }
     }
-    @media screen and (max-width: 1000px), (max-height: 662px) {
-      .top-left-image{
-        width: 15vw;
-        height: 17vh;
-      }
-      .track-title{
-        top: 36%;
-      }
+    @media screen and (max-width: 912px), (max-height: 460px) {
+      #play-button {
+        left: 8.8%; 
+        font-size: 5.5vw;
+        }
+        #pause-button {
+        font-size: 3vw;
+        top: 41%;
+        }
     }
-    @media screen and (max-width: 910px), (max-height: 662px) {
+    @media screen and (max-width: 730px), (max-height: 460px) {
       .top-left-image{
-        top: 30%;
-        width: 15vw;
+        width: 12vw;
         height: 16vh;
       }
-      .track-title{
-        left: 20%;
-      }
       .slider{
-        top: 14vw;
+        top:17vh;
       }
-      .volume-label {
-        top: 18.5vh;
+      .volume-label{
+        top: 17vh;
+      }
+      .time-container{
+        top: 13vh;
+      }
     }
-    .time-container {
-      top: 16vh;
-    }
-    }
-    @media screen and (max-width: 850px), (max-height: 662px) {
+    @media screen and (max-width: 665px), (max-height: 460px) {
       .top-left-image{
-        top: 32%;
-        width: 14vw;
+        width: 11vw;
         height: 15vh;
       }
-      .slider{
-        top: 13vw;
-      }
-      .volume-label {
-        top: 16.5vh;
+      #play-button {
+        top: 30%;
+        font-size: 5.5vw;
+        }
+        .track-title{
+          top: 34%;
+        }
     }
-    .time-container {
-      top: 14vh;
-    }
-    }
-    @media screen and (max-width: 810px), (max-height: 662px) {
+    @media screen and (max-width: 615px), (max-height: 460px) {
       .top-left-image{
-        top: 35%;
-        width: 13vw;
+        width: 10vw;
         height: 14vh;
       }
-      .slider{
-        top: 12vw;
-      }
-      .volume-label {
-        top: 14.5vh;
     }
-    .time-container {
-      top: 11.5vh;
-    }
-    .track-title{
-      top: 38%;
-    }
-    }
-
-    @media screen and (max-width: 760px), (max-height: 662px) {
+    @media screen and (max-width: 585px), (max-height: 460px) {
       .top-left-image{
-        top: 35%;
-        width: 12vw;
+        top: 38%;
+        width: 10vw;
         height: 13vh;
       }
-      .slider{
-        top: 12vw;
+      .track-title{
+        top: 38%;
       }
-      .volume-label {
-        top: 13.5vh;
+      .slider{
+        top:12vh;
+      }
+      .volume-label{
+        top: 12vh;
+      }
+      .time-container{
+        top: 8vh;
+      }
     }
-    .time-container {
-      top: 10.5vh;
-    }
-    .track-title{
-      top: 39%;
-    }
-    }
-    @media screen and (max-width: 720px), (max-height: 662px) {
+    @media screen and (max-width: 585px), (max-height: 460px) {
       .top-left-image{
-        top: 36%;
-        width: 11vw;
+        width: 10vw;
         height: 12vh;
       }
-      .volume-label {
-        top: 12.5vh;
     }
-    .time-container {
-      top: 9.5vh;
-    }
-    }
-    @media screen and (max-width: 660px), (max-height: 662px) {
+    @media screen and (max-width: 455px), (max-height: 460px) {
       .top-left-image{
-        top: 36.5%;
         width: 10vw;
         height: 11vh;
       }
-    .volume-label {
-        top: 11.5vh;
     }
-    .time-container {
-      top: 8.5vh;
-    }
-    .track-title{
-      top: 40%;
-    }
-    .track-name,
-    .track-artist {
-    margin-bottom: -1.4vh;
-    }
-    }
-    @media screen and (max-width: 600px), (max-height: 662px) {
+    @media screen and (max-width: 420px), (max-height: 460px) {
       .top-left-image{
-        top: 38%;
-        width: 9.5vw;
+        width: 10vw;
         height: 10vh;
       }
-      .track-title{
-        top: 41%;
+      .track-name,
+      .track-artist {
+        margin-bottom: -0.8vh;
       }
       .slider{
-        top: 11vw;
+        top:10vh;
       }
-      .volume-label {
-        top: 10.5vh;
+      .volume-label{
+        top: 9vh;
+      }
+      .time-container{
+        top: 5vh;
+      }
+      .track-title{
+        top: 40%;
+      }
     }
-    .time-container {
-      top: 7.5vh;
-    }
-    #play-button{
-      font-size: 6vw;
-    }
-    #pause-button{
-      font-size: 3.5vw;
-    }
-    }
-    @media screen and (max-width: 560px), (max-height: 662px) {
+    @media screen and (max-width: 380px), (max-height: 460px) {
       .top-left-image{
-        top: 39%;
-        width: 8.5vw;
+        top: 43%;
+        width: 10vw;
         height: 9vh;
       }
       .track-title{
-        top: 42%;
+        top: 44%;
       }
-      .volume-label {
-        top: 9vh;
-    }
-    .time-container {
-      top: 6vh;
-    }
-    .track-name,
-    .track-artist {
-      margin-bottom: -1vh;
-    }
-    #play-button{
-      top: 35%;
-      font-size: 5.2vw;
-    }
-    #pause-button{
-      font-size: 3vw;
-    }
-    }
-    @media screen and (max-width: 530px), (max-height: 662px) {
-      .top-left-image{
-        top: 42%;
-        width: 7.5vw;
-        height: 8vh;
+      .track-name{
+        font-size: 1.8vh;
+      }
+      .track-artist{
+        font-size: 1.2vh;
       }
       .slider{
-        top: 9vw;
+        top:7vh;
+        height: 0.2vh;
       }
-      .volume-label {
-        top: 7vh;
-    }
-    .time-container {
-      top: 4vh;
-    }
-    #play-button{
-      top: 33%;
-    }
-
-    }
-    @media screen and (max-width: 500px), (max-height: 662px) {
-      #play-button{
-        top: 31%;
+      .volume-label{
+        top: 5vh;
+        left: 40vw;
       }
-    #pause-button{
-      left: -1%;
+      .time-container{
+        top: 1vh;
+      }
+      #play-button {
+        left: 0.1vw;
+      }
+      #pause-button{
+        left: -0.5vw;
+      }
     }
-      .volume-label {
-        top: 7.5vh;
+    @media screen and (max-width: 300px), (max-height: 460px) {
+      .top-left-image{
+        top: 43%;
+        width: 9vw;
+        height: 7vh;
+      }
     }
-    .time-container {
-      top: 4.5vh;
+    @media screen and (max-width: 280px), (max-height: 460px) {
+      .track-name{
+        font-size: 1.6vh;
+      }
+      .track-artist{
+        font-size: 1vh;
+      }
+      .track-title{
+        top: 44%;
+        left: 24%;
+      }
+      .top-left-image{
+        top: 43%;
+        width: 9vw;
+        height: 6.8vh;
+      }
+      .slider{
+        top:7vh;
+        height: 0.15vh;
+        width: 27%;
+      }
     }
-    .track-title{
-      top: 44%;
+    @media screen and (max-width: 260px), (max-height: 460px) {
+      .track-name{
+        font-size: 1.4vh;
+      }
+      .track-artist{
+        font-size: 0.8vh;
+      }
     }
-    .slider{
-      top: 11vw;
-    }
-    }
-    @media screen and (max-width: 450px), (max-height: 662px) {
-      .volume-label {
-        top: 6.5vh;
-    }
-    .time-container {
-      top: 3.5vh;
-    }
-    .top-left-image{
-      top: 43%;
-    }
-    .slider{
-      top: 10vw;
-    }
-    .volume-label {
-      top: 6vh;
-  }
-  .time-container {
-    top: 3vh;
-  }
-  #play-button{
-    top: 28%;
-  }
-#pause-button{
-  top: 35%;
-}
-    }
-    @media screen and (max-width: 410px), (max-height: 662px) {
+    @media screen and (max-width: 240px), (max-height: 460px) {
+      .track-title{
+        top: 46%;
+        left: 24%;
+      }
+      .track-name{
+        font-size: 1.2vh;
+      }
+      .track-artist{
+        font-size: 0.6vh;
+      }
+      .top-left-image{
+        top: 44%;
+        width: 8vw;
+        height: 5.8vh;
+      }
+      .slider{
+        top:6vh;
+      }
+      .volume-label{
+        top: 4vh;
+      }
+      .time-container{
+        top: -0.4vh;
+      }
       .track-name,
-      .track-artist {
-      margin-bottom: -0.4vh;
+      .track-artist{
+        margin-bottom: -0.5vh;
       }
-      #play-button{
-        top: 24%;
+      #play-button {
+        top: 1.5vh;
+        left: -0.2vw;
       }
-    #pause-button{
-      top: 33%;
+      #pause-button{
+        top: 2.2vh;
+        left: -1vw;
+      }
     }
-    .volume-label {
-      top: 5.2vh;
-  }
-  .time-container {
-    top: 2.5vh;
-  }
+    @media screen and (max-width: 240px), (max-height: 460px) {
+      .top-left-image{
+        top: 46%;
+        width: 7vw;
+        height: 5vh;
+      } 
+      #play-button {
+        top: 1.2vh;
+        left: -1.4vw;
+      }
+      #pause-button{
+        top: 1.7vh;
+        left: -2.1vw;
+      }
+      .slider{
+        top:3.8vh;
+        width: 20%;
+      }
+      .volume-label{
+        top: 1.8vh;
+      }
+      .time-container{
+        top: -2.3vh;
+      }
+      .track-name{
+        font-size: 1vh;
+      }
+      .track-artist{
+        font-size: 0.4vh;
+      }
+      .track-name,
+      .track-artist{
+        margin-bottom: 0.1vh;
+      }
     }
-    @media screen and (max-width: 390px), (max-height: 662px) {
+    @media screen and (max-width: 500px), (max-height: 650px) {
+      .top-left-image {
+        top:42%;
+        width: 8vw;
+        height: 8vh;
+      }
+    .track-title {
+      top: 30vh;
+      left: 15.5vw;     
+    }
+    
+    .track-name,
+    .track-artist {
+      margin-bottom: -0.1vh;
+    }
     .slider{
-    height: 0.3vh;
-  }
-  .top-left-image{
-    top: 44%;
-  }
-  #play-button{
-    left: 6%;
-  }
-#pause-button{
-  left: -5%;
+      top:9vh;
+      left: 8%;
+      height: 0.2vh;
+        }
+    #play-button {
+      top: 27%; 
+    }
+#pause-button {
+  top: 38%;
+  left: -1%;
 }
+    .volume-label {
+      top: 7.9vh;
+      left: 46vw;
     }
-    @media screen and (max-width: 320px), (max-height: 662px) {
-      .volume-label {
-        top: 3.8vh;
-        left: 42vw;
-    }
-    .time-container {
-      top: 1vh;
-    }
-    #play-button{
-      top: 18%;
-      left: 3%;
-    }
-  #pause-button{
-    top: 26%;
-    left: -11%;
+  .time-container {
+    top: 4.8vh;
+    left: 13vw;
   }
-  .track-title{
-    top: 45%;
-  }
-    }
-
-    @media screen and (max-width: 320px), (max-height: 885px) {
-      .volume-label {
-        top: 5.5vh;
-        left: 42vw;
-    }
-    .time-container {
-      top: 3vh;
-    }
-    #play-button{
-      top: 16%;
-      left: 3%;
-    }
-  #pause-button{
-    top: 26%;
-    left: -11%;
-  }
-  .track-title{
-    top: 45%;
-  }
-  .slider{
-    top: 6vh;
-    height: 0.3vh;
-  }
-    }
+}
