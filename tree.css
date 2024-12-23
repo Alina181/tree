@@ -128,3 +128,33 @@ body {
 #time-label, #volume-label {   
   font-size: 0.8rem;   
 }
+ @media (max-width:400px) , (max-height:735px) {  
+  .slider {
+  width: 5px; /* Устанавливаем ширину для вертикального слайдера */
+}
+.slider::-webkit-slider-thumb {
+  top: 30px;
+}
+ }
+
+ /* Снежинка-курс */  
+.snowflake-cursor {  
+  position: absolute;  
+  width: 20px;  
+  height: 20px;  
+  background: url('1.png') no-repeat center;  
+  background-size: contain;  
+  pointer-events: none;  
+}  
+
+/* Неоновая змейка */  
+.neon-dot {  
+  position: absolute;  
+  width: 5px;  
+  height: 5px;  
+  background-color: #fff;  
+  border-radius: 50%;  
+  opacity: 0;  
+  pointer-events: none;  
+  transition: all 0.2s ease;  
+}  
