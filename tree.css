@@ -106,6 +106,7 @@ body {
 }   
 
 .slider {   
+  display: flex;
   flex: 1;   
   margin: 0 15px;   
   height: 5px;   
@@ -115,7 +116,8 @@ body {
   -webkit-appearance: none;   
 }   
 
-.slider::-webkit-slider-thumb {   
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb {   
   -webkit-appearance: none;   
   appearance: none;   
   width: 15px;   
@@ -123,6 +125,7 @@ body {
   background: url('tree.png') no-repeat center;   
   background-size: contain;   
   cursor: pointer;   
+  border: none;
 }
 
 #time-label, #volume-label {   
