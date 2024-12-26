@@ -10,12 +10,10 @@ body {
   font-family: Arial, sans-serif;   
   color: #fff;   
   overflow: hidden;  
-  cursor:auto;
 }   
 
 /* Контейнер плеера */
 .center-image {   
-  overflow: hidden;  
   width: 90%;   
   max-width: 700px;   
   padding: 30px;   
@@ -103,12 +101,11 @@ body {
   display: flex;   
   align-items: center;   
   justify-content: space-between;   
-  margin-top: 80px; /* Добавляем отступ сверху, чтобы ползунки сдвинулись ниже */
+  margin-top: 80px; 
   margin-bottom: 5px;   
 }   
 
 .slider {   
-  display: flex;
   flex: 1;   
   margin: 0 15px;   
   height: 5px;   
@@ -118,8 +115,7 @@ body {
   -webkit-appearance: none;   
 }   
 
-.slider::-webkit-slider-thumb,
-.slider::-moz-range-thumb {   
+.slider::-webkit-slider-thumb {   
   -webkit-appearance: none;   
   appearance: none;   
   width: 15px;   
@@ -127,43 +123,20 @@ body {
   background: url('tree.png') no-repeat center;   
   background-size: contain;   
   cursor: pointer;   
-  border: none;
 }
 
 #time-label, #volume-label {   
   font-size: 0.8rem;   
 }
- @media (max-width:400px) , (max-height:735px) {  
-  .slider {
-  width: 5px; /* Устанавливаем ширину для вертикального слайдера */
+@media (max-width:825px) , (max-height:655px) { 
+.center-image { 
+  padding: 25px;   
 }
-.slider::-webkit-slider-thumb {
-  top: 30px;
+.slider-container {   
+  margin-top: 40px; 
+
 }
- }
-
- /* Снежинка-курс */  
-.snowflake-cursor {  
-  position: absolute;  
-  width: 20px;  
-  height: 20px;  
-  background: url('1.png') no-repeat center;  
-  background-size: contain;  
-  pointer-events: none;  
-}  
-
-/* Неоновая змейка */  
-.neon-dot {  
-  position: absolute;  
-  width: 5px;  
-  height: 5px;  
-  background-color: #fff;  
-  border-radius: 50%;  
-  opacity: 0;  
-  pointer-events: none;  
-  transition: all 0.2s ease;  
-}  
-
+}
 @media (max-width:560px) , (max-height:655px) { 
 /* Уменьшаем размер ползунков и выравниваем элементы в строчку */
 .slider-container {
