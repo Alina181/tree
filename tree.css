@@ -14,6 +14,7 @@ body {
 
 /* Контейнер плеера */
 .center-image {   
+  overflow: hidden;  
   width: 90%;   
   max-width: 700px;   
   padding: 30px;   
