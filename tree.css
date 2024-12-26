@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;   
   color: #fff;   
   overflow: hidden;  
+  cursor:auto;
 }   
 
 /* Контейнер плеера */
@@ -162,3 +163,146 @@ body {
   pointer-events: none;  
   transition: all 0.2s ease;  
 }  
+
+@media (max-width:560px) , (max-height:655px) { 
+/* Уменьшаем размер ползунков и выравниваем элементы в строчку */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px; /* Уменьшаем отступ сверху */
+  gap: 10px; /* Добавляем небольшой отступ между элементами */
+}
+
+/* Ползунок - уменьшаем размер */
+.slider {
+  flex: 1; /* Растягиваем ползунок, чтобы занимал доступное пространство */
+  margin: 0; /* Убираем боковые отступы */
+  height: 4px; /* Уменьшаем высоту ползунка */
+  background: linear-gradient(to right, #ffd700, #1DB954);
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* Стили для меток времени и громкости */
+#time-label, #volume-label {
+  font-size: 0.8rem; /* Уменьшаем размер текста */
+  margin: 0 5px; /* Добавляем отступы между метками и ползунками */
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+/* Ставим метки и ползунки в строчку */
+.time-slider, .volume-slider {
+  display: flex;
+  align-items: center; /* Центрируем элементы по вертикали */
+  gap: 5px; /* Расстояние между меткой и ползунком */
+}
+}
+/* Уменьшаем размер ползунков для мобильных устройств */
+@media (max-width: 425px) {
+  .slider-container {
+    flex-direction: column; /* Вертикальное расположение для маленьких экранов */
+    align-items: flex-start; /* Выровнять элементы по левому краю */
+    gap: 15px; /* Увеличиваем отступы между блоками */
+  }
+
+  .slider {
+    height: 3px; /* Еще немного уменьшаем высоту ползунка */
+  }
+
+  #time-label, #volume-label {
+    font-size: 0.7rem; /* Уменьшаем текст для маленьких экранов */
+  }
+}
+@media (max-width: 800px) , (max-height:365px) {
+  .center-image {  
+    max-width: 90%; /* Контейнер занимает больше места на маленьких экранах */   
+    padding: 15px;    
+  }
+
+  .track-title {
+    font-size: 1rem; /* Уменьшенный размер заголовка */
+    padding-left: 130px;
+  }
+
+  .slider {
+  height: 3px; /* Уменьшенная высота ползунков */
+  }
+
+  .slider-container {
+  width: -500%;
+
+    gap: 8px; /* Меньшее расстояние между элементами */
+  }
+
+  #time-label, #volume-label {
+    font-size: 0.7rem; /* Уменьшенный текст */
+  }
+}
+/* Основной контейнер для мобильного размера */
+@media (max-width: 425px) {
+  .center-image {
+    max-width: 100%; /* Занимаем всю ширину экрана */
+    padding: 10px;
+    margin: 0 auto; /* Центрируем по горизонтали */
+    box-sizing: border-box; /* Учитываем отступы */
+  }
+
+  .track-title {
+    font-size: 0.5rem; /* Сохраняем читаемость текста */
+    padding-left: 0; /* Убираем лишний отступ */
+    text-align: center; /* Выравниваем заголовок по центру */
+  }
+.track-name {   
+  font-size: 1.1rem; /* Сохраняем читаемость текста */
+
+}
+#time-label, #volume-label {   
+  width: 50%;
+}
+
+  .slider-container {
+    height: .4px; /* Сохраняем удобство взаимодействия */
+    align-items: center; /* Центрируем элементы */
+    gap: 10px; /* Отступ между слайдерами */
+    width: 100%; /* Контейнер адаптируется к ширине экрана */
+  }
+
+  .slider {
+    
+    width: 90%; /* Слайдеры занимают большую часть экрана */
+    border-radius: 20px; /* Закругленные края */
+  }
+
+  #time-label, #volume-label {
+    font-size: 0.8rem; /* Немного уменьшаем текст */
+    text-align: center; /* Центрируем текст */
+  }
+}
+
+/* Для экранов средней высоты и ширины */
+@media (max-width: 800px), (max-height: 365px) {
+  .center-image {
+    max-width: 90%; /* Уменьшаем ширину на небольших экранах */
+    padding: 15px;
+  }
+
+  .track-title {
+    font-size: 1rem; /* Заголовок чуть меньше */
+    padding-left: 0; /* Убираем лишние отступы */
+    text-align: center; /* Выравнивание заголовка */
+  }
+
+  .slider-container {
+    gap: 8px; /* Уменьшаем отступы между элементами */
+  }
+
+  .slider {
+    height: 3px; /* Тонкие ползунки */
+  }
+
+  #time-label, #volume-label {
+    font-size: 0.7rem; /* Уменьшаем текст меток */
+  }
+}
