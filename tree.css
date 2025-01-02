@@ -149,9 +149,11 @@ body {
   .slider {
   width: 5px; /* Устанавливаем ширину для вертикального слайдера */
 }
-.slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb {
   top: 30px;
 }
+
  }
 
  /* Снежинка-курс */  
