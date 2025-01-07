@@ -145,15 +145,25 @@ body {
 #time-label, #volume-label {   
   font-size: 0.8rem;   
 }
- @media (max-width:400px) , (max-height:735px) {  
+ @media (max-width:400px) , (max-height:735px) { 
+.slider-container {   
+  display:inline;
+  width: 100%;
+  /* flex-direction: column; */
+  /* position: sticky; */
+}
   .slider {
-  width: 5px; /* Устанавливаем ширину для вертикального слайдера */
+  width: 145px;
 }
 .slider::-webkit-slider-thumb,
 .slider::-moz-range-thumb {
   top: 30px;
 }
-
+#time-label, #volume-label {   
+/* display:flow-root; */
+  top: 10px;
+  font-size: 0.8rem;   
+}
  }
 
  /* Снежинка-курс */  
