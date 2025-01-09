@@ -1,3 +1,99 @@
+const linkStylesheet = document.createElement('link');
+linkStylesheet.rel = 'stylesheet';
+linkStylesheet.href = 'tree.css';
+document.head.appendChild(linkStylesheet);
+
+const linkIcon = document.createElement('link');
+linkIcon.rel = 'icon';
+linkIcon.type = 'image/x-icon';
+linkIcon.href = './frost.ico';
+document.head.appendChild(linkIcon);
+document.addEventListener("DOMContentLoaded", function() {
+    const body = document.body;
+
+    const centerImageDiv = document.createElement("div");
+    centerImageDiv.className = "center-image";
+
+    const trackTitleDiv = document.createElement("div");
+    trackTitleDiv.className = "track-title";
+
+    const trackName = document.createElement("p");
+    trackName.className = "track-name";
+    trackName.textContent = "Дискотека Авария";
+
+    const trackArtist = document.createElement("p");
+    trackArtist.className = "track-artist";
+    trackArtist.textContent = "Новогодняя";
+
+    trackTitleDiv.appendChild(trackName);
+    trackTitleDiv.appendChild(trackArtist);
+    centerImageDiv.appendChild(trackTitleDiv);
+
+    const controlsDiv = document.createElement("div");
+    controlsDiv.className = "controls";
+
+    const ballButtonContainer = document.createElement("div");
+    ballButtonContainer.className = "ball-button-container";
+
+    const playButton = document.createElement("button");
+    playButton.className = "button play-button";
+    playButton.id = "play-button";
+    playButton.textContent = "▶";
+
+    const pauseButton = document.createElement("button");
+    pauseButton.className = "button pause-button";
+    pauseButton.id = "pause-button";
+    pauseButton.style.display = "none";
+    pauseButton.textContent = "▐▐";
+
+    ballButtonContainer.appendChild(playButton);
+    ballButtonContainer.appendChild(pauseButton);
+    controlsDiv.appendChild(ballButtonContainer);
+
+    const sliderContainer = document.createElement("div");
+    sliderContainer.className = "slider-container";
+
+    const musicSlider = document.createElement("input");
+    musicSlider.type = "range";
+    musicSlider.className = "slider";
+    musicSlider.id = "music-slider";
+    musicSlider.min = "0";
+    musicSlider.max = "100";
+    musicSlider.value = "0";
+
+    const currentTime = document.createElement("span");
+    currentTime.className = "current-time";
+    currentTime.id = "current-time";
+    currentTime.textContent = "0:00";
+
+    const totalTime = document.createElement("span");
+    totalTime.className = "total-time";
+    totalTime.textContent = "0:00";
+
+    sliderContainer.appendChild(musicSlider);
+    sliderContainer.appendChild(currentTime);
+    sliderContainer.appendChild(document.createTextNode(" / "));
+    sliderContainer.appendChild(totalTime);
+
+    const volumeSlider = document.createElement("input");
+    volumeSlider.type = "range";
+    volumeSlider.className = "slider";
+    volumeSlider.id = "volume-slider";
+    volumeSlider.min = "0";
+    volumeSlider.max = "100";
+    volumeSlider.value = "50";
+
+    const volumeLabel = document.createElement("span");
+    volumeLabel.className = "volume-label";
+    volumeLabel.textContent = "Громкость: 50%";
+
+    sliderContainer.appendChild(volumeSlider);
+    sliderContainer.appendChild(volumeLabel);
+    controlsDiv.appendChild(sliderContainer);
+    centerImageDiv.appendChild(controlsDiv);
+    body.appendChild(centerImageDiv);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Создание элемента курсора снежинки
     const snowflakeCursor = document.createElement('div');

@@ -148,9 +148,7 @@ body {
  @media (max-width:400px) , (max-height:735px) { 
 .slider-container {   
   display:inline;
-  width: 100%;
-  /* flex-direction: column; */
-  /* position: sticky; */
+  width: 1%;
 }
   .slider {
   width: 145px;
@@ -160,7 +158,6 @@ body {
   top: 30px;
 }
 #time-label, #volume-label {   
-/* display:flow-root; */
   top: 10px;
   font-size: 0.8rem;   
 }
