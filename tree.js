@@ -95,16 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Создание элемента курсора снежинки
-    const snowflakeCursor = document.createElement('div');
-    snowflakeCursor.classList.add('snowflake-cursor');
-    document.body.appendChild(snowflakeCursor);
 
-    // Обработчик движения мыши для снежинки
-    document.addEventListener('mousemove', (event) => {
-        snowflakeCursor.style.left = `${event.pageX}px`;
-        snowflakeCursor.style.top = `${event.pageY}px`;
-    });
 
     // Обработчик касаний для мобильных устройств
     document.addEventListener('touchmove', (event) => {
