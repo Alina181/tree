@@ -3,6 +3,19 @@ linkStylesheet.rel = 'stylesheet';
 linkStylesheet.href = 'tree.css';
 document.head.appendChild(linkStylesheet);
 
+// Создаем новый элемент div
+const div = document.createElement('div');
+
+// Устанавливаем атрибут id
+div.id = 'question-mark';
+
+// Устанавливаем текстовое содержимое
+div.textContent = '?';
+
+// Добавляем div в body или другой контейнер на странице
+document.body.appendChild(div);
+
+
 const linkIcon = document.createElement('link');
 linkIcon.rel = 'icon';
 linkIcon.type = 'image/x-icon';
