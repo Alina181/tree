@@ -93,7 +93,34 @@ document.addEventListener("DOMContentLoaded", function() {
     centerImageDiv.appendChild(controlsDiv);
     body.appendChild(centerImageDiv);
 });
+// Функция для отображения инструкции 
 
+const questionMark = document.getElementById('question-mark');
+questionMark.addEventListener('click', showInstructions);
+function showInstructions() {
+    const instructionsDiv = document.getElementById('instructions');
+    if (instructionsDiv) {
+      instructionsDiv.remove();
+    } else {
+      const instructions = document.createElement('div');
+      instructions.id = 'instructions';
+      instructions.classList.add('instructions');
+      instructions.innerHTML = `
+        <h1>Инструкции по управлению плеером:</h1>
+        <ul>
+          <li><b>Enter / кнопка на главном экране "?" :</b> Показать /скрыть инструкции</li>
+          <li><b> Стрелка вправо на клавиатуре / Кнопка N на клавиатуре:</b> Следующий трек</li>
+          <li><b>Стрелка влево на клавиатуре:</b> Предыдущий трек</li>
+          <li><b>Стрелка вверх на клавиатуре:</b> Увеличить громкость</li>
+          <li><b>Стрелка вниз на клавиатуре:</b> Уменьшить громкость</li>
+          <li><b>Кнопка на клавиатуре R:</b> Случайный трек</li>
+          <li><b>Кнопка на клавиатуре E:</b> Добавить трек (формат: название;артист;ссылка)</li>
+          <li><b>Кнопка на клавиатуре S:</b> Сбросить треки на стандартные</li>
+        </ul>
+      `;
+      document.body.appendChild(instructions);
+    }
+  }
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -221,12 +248,20 @@ playBtn.addEventListener('click', playMusic);
     // Обработка нажатий клавиш
     document.addEventListener('keydown', (event) => {
         switch (event.code) {
+            case 'Enter': // Инструкция
+            showInstructions();
+            break;
 
             case 'ArrowRight': // Следующий трек
                 currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
                 loadTrack(currentTrackIndex);
                 if (isPlaying) musicPlayer.play();
                 break;
+            case 'KeyN': // Следующий трек 
+                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length; 
+                loadTrack(currentTrackIndex); 
+                if (isPlaying) musicPlayer.play(); 
+            break;               
             case 'ArrowLeft': // Предыдущий трек
                 currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
                 loadTrack(currentTrackIndex);
@@ -245,27 +280,28 @@ playBtn.addEventListener('click', playMusic);
                 loadTrack(currentTrackIndex);
                 if (isPlaying) musicPlayer.play();
                 break;
-            case 'KeyN': // Добавить трек
-                const newTrack = prompt("Введите название, исполнителя и URL трека (через ;):");
-                if (newTrack) {
-                    const [title, artist, src] = newTrack.split(';');
-                    if (title && artist && src) {
-                        musicTracks.push({ title, artist, src });
-                        alert(`Трек добавлен: ${title} - ${artist}`);
-                    } else {
-                        alert('Неверный формат! Используйте: Название;Исполнитель;URL');
-                    }
-                }
+            case 'KeyE': // Добавить трек
+            const newTrack = prompt("Введите название, артиста и URL новой мелодии в формате 'название;артист;ссылка':"); 
+            if (newTrack) { 
+                const [title, artist, src] = newTrack.split(';'); 
+                if (title && artist && src) { 
+                    musicTracks.push({ title, artist, src }); 
+                    alert(`Добавлена мелодия: ${title} - ${artist}`); 
+                } else { 
+                    alert('Неправильный формат. Используйте: название;артист;ссылка'); 
+                } 
+            } 
                 break;
             case 'KeyS': // Сброс треков
-                musicTracks.splice(0, musicTracks.length, 
-                    { title: 'Дискотека Авария', artist: 'Новогодняя', src: 'Music/A.mp3' },
-                    { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },
-                    { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' }
-                );
-                currentTrackIndex = 0;
-                loadTrack(currentTrackIndex);
-                break;
+            musicTracks.length = 0;  // Очищаем текущий массив 
+            musicTracks.push( 
+                { title: 'Дискотека Авария', artist: 'Новогодняя', src: 'Music/A.mp3' },   
+                { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },   
+                { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' } 
+            ); 
+            currentTrackIndex = 0;  // Сбрасываем индекс 
+            loadTrack(currentTrackIndex);  // Загружаем первую мелодию 
+            break; 
         }
     });
 
