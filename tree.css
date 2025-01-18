@@ -163,7 +163,11 @@ body {
     top: 10px; 
     font-size: 0.8rem;    
   } 
+  
 }   
+@media (max-width:426px), (max-height:655px) {  
+
+}
 
 /* Неоновая змейка */   
 .neon-dot {   
@@ -179,15 +183,15 @@ body {
 
 
 .instructions {
+  font-size: .9rem;    
   position: fixed; /* Закрепляем на экране */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
   background-color: rgba(0, 0, 0, 0.8); 
   color: white;
-  padding: 70px;
+  padding: 50px;
   border-radius: 5px;
-  width: 600px;
   z-index: 1000; 
   text-align: center; 
   overflow: hidden;   
