@@ -229,6 +229,6 @@ margin-bottom: 5px;
   cursor: pointer;
   position: relative;
   margin: 0 125px;
-  top: -68px; /* Поднимаем на 5px */
+  top: -48px; /* Поднимаем на 5px */
   left:-140px;
 }
