@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const centerImageDiv = document.createElement("div");
     centerImageDiv.className = "center-image";
+    const prevTrackButton = document.createElement("button-p");
+    prevTrackButton.id = "prev-track"; 
+    prevTrackButton.className = "arrow-button";
+    prevTrackButton.textContent = "❮";
+
+    const nextTrackButton = document.createElement("button-p");
+    nextTrackButton.id = "next-track"; 
+    nextTrackButton.className = "arrow-button";
+    nextTrackButton.textContent = "❯";
 
     const trackTitleDiv = document.createElement("div");
     trackTitleDiv.className = "track-title";
@@ -35,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
     trackTitleDiv.appendChild(trackName);
     trackTitleDiv.appendChild(trackArtist);
     centerImageDiv.appendChild(trackTitleDiv);
+    centerImageDiv.appendChild(prevTrackButton);
+    centerImageDiv.appendChild(nextTrackButton);
+
 
     const controlsDiv = document.createElement("div");
     controlsDiv.className = "controls";
@@ -189,6 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackArtist = document.querySelector('.track-artist');
     const currentTimeElem = document.getElementById('current-time');
     const totalTimeElem = document.getElementById('total-time');
+    // Получаем кнопки по ID 
+    const prevTrackButton = document.getElementById('prev-track');
+    const nextTrackButton = document.getElementById('next-track');
+
     let isPlaying = false;
     let currentTrackIndex = 0;
 
@@ -197,6 +213,20 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },
         { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' },
     ];
+
+        // Обработчики кликов на кнопки (вне функций)
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+            loadTrack(currentTrackIndex);
+        }
+    
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
+            loadTrack(currentTrackIndex);
+        }
+        prevTrackButton.addEventListener('click', prevTrack);
+        nextTrackButton.addEventListener('click', nextTrack);
+    
 
     function loadTrack(trackIndex) {
         const track = musicTracks[trackIndex];
@@ -314,4 +344,6 @@ playBtn.addEventListener('click', playMusic);
 
     // Инициализация
     loadTrack(currentTrackIndex);
+    document.body
+    document.body.appendChild(centerImageDiv);
 });

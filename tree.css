@@ -212,3 +212,23 @@ margin-bottom: 5px;
 }
 
 
+.button-p {
+  position:absolute;
+  display:block;
+  align-items: center;
+  margin-left: 10px;
+  top: -10px;
+
+}
+
+.arrow-button {
+  background-color: transparent;
+  border: none; 
+  font-size: 2rem;
+  color: #50C878;
+  cursor: pointer;
+  position: relative;
+  margin: 0 125px;
+  top: -68px; /* Поднимаем на 5px */
+  left:-140px;
+}
