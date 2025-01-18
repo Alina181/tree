@@ -22,7 +22,8 @@ body {
   background-size: cover;    
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);    
   text-align: center;    
-  position: relative; /* Для позиционирования внутренних элементов */  
+  position: relative; /* Для позиционирования внутренних элементов */ 
+  overflow: hidden;   
 }    
 
 /* Контейнер с изображением и кнопками в левом верхнем углу */ 
@@ -188,6 +189,8 @@ body {
   border-radius: 5px;
   z-index: 1000; 
   text-align: center; 
+  overflow: hidden;   
+
 }
 
 .instructions ul {
@@ -229,6 +232,6 @@ margin-bottom: 5px;
   cursor: pointer;
   position: relative;
   margin: 0 125px;
-  top: -38px; /* Поднимаем на 5px */
+  top: -38px; 
   left:-140px;
 }
