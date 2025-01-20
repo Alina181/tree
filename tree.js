@@ -270,4 +270,69 @@ document.addEventListener('DOMContentLoaded', () => {
         const seconds = Math.floor(time % 60);
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     }
-    })
+
+    // Обработка нажатий клавиш
+    document.addEventListener('keydown', (event) => {
+        switch (event.code) {
+            case 'Enter': // Инструкция
+            showInstructions();
+            break;
+
+            case 'ArrowRight': // Следующий трек
+                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+                loadTrack(currentTrackIndex);
+                if (isPlaying) musicPlayer.play();
+                break;
+            case 'KeyN': // Следующий трек 
+                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length; 
+                loadTrack(currentTrackIndex); 
+                if (isPlaying) musicPlayer.play(); 
+            break;               
+            case 'ArrowLeft': // Предыдущий трек
+                currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
+                loadTrack(currentTrackIndex);
+                if (isPlaying) musicPlayer.play();
+                break;
+            case 'ArrowUp': // Увеличение громкости
+                volumeSlider.value = Math.min(100, parseInt(volumeSlider.value) + 10);
+                volumeSlider.dispatchEvent(new Event('input'));
+                break;
+            case 'ArrowDown': // Уменьшение громкости
+                volumeSlider.value = Math.max(0, parseInt(volumeSlider.value) - 10);
+                volumeSlider.dispatchEvent(new Event('input'));
+                break;
+            case 'KeyR': // Случайный трек
+                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+                loadTrack(currentTrackIndex);
+                if (isPlaying) musicPlayer.play();
+                break;
+            case 'KeyE': // Добавить трек
+            const newTrack = prompt("Введите название, артиста и URL новой мелодии в формате 'название;артист;ссылка':"); 
+            if (newTrack) { 
+                const [title, artist, src] = newTrack.split(';'); 
+                if (title && artist && src) { 
+                    musicTracks.push({ title, artist, src }); 
+                    alert(`Добавлена мелодия: ${title} - ${artist}`); 
+                } else { 
+                    alert('Неправильный формат. Используйте: название;артист;ссылка'); 
+                } 
+            } 
+                break;
+            case 'KeyS': // Сброс треков
+            musicTracks.length = 0;  // Очищаем текущий массив 
+            musicTracks.push( 
+                { title: 'Дискотека Авария', artist: 'Новогодняя', src: 'Music/A.mp3' },   
+                { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },   
+                { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' } 
+            ); 
+            currentTrackIndex = 0;  // Сбрасываем индекс 
+            loadTrack(currentTrackIndex);  // Загружаем первую мелодию 
+            break; 
+        }
+    });
+
+    // Инициализация
+    loadTrack(currentTrackIndex);
+    document.body
+    document.body.appendChild(centerImageDiv);
+});
