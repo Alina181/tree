@@ -110,7 +110,7 @@ body {
   height: 0.5vh;   
   background: linear-gradient(to right, #ffd700, #1DB954);   
   border-radius: 5px;   
-  width: 30vh;
+  width: 3;
   outline: none;   
   -webkit-appearance: none;   
 }   
@@ -215,4 +215,34 @@ body {
   margin: 0 8.5vw;
   top: -5.8vh; 
   left: -7.8vw;
+}
+
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.button1 {
+  margin: 50px;
+  padding: 10px 20px;
+  font-size: 6px;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
+.additional-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

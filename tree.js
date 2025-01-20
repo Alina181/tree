@@ -190,7 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     moveDots();
-// Инициализация музыкального плеера
+
+    // Логика музыкального плеера
     const musicPlayer = document.getElementById('music-player-audio');
     const playBtn = document.getElementById('play-button');
     const pauseBtn = document.getElementById('pause-button');
@@ -200,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackArtist = document.querySelector('.track-artist');
     const currentTimeElem = document.getElementById('current-time');
     const totalTimeElem = document.getElementById('total-time');
+    // Получаем кнопки по ID 
     const prevTrackButton = document.getElementById('prev-track');
     const nextTrackButton = document.getElementById('next-track');
 
@@ -212,23 +214,20 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' },
     ];
 
-    // Обработчики событий для кнопок
-    prevTrackButton.addEventListener('click', () => changeTrack(-1));
-    nextTrackButton.addEventListener('click', () => changeTrack(1));
-    playBtn.addEventListener('click', togglePlayPause);
-    pauseBtn.addEventListener('click', togglePlayPause);
-    volumeSlider.addEventListener('input', updateVolume);
-    musicSlider.addEventListener('input', () => {
-        musicPlayer.currentTime = musicSlider.value;
-    });
+        // Обработчики кликов на кнопки (вне функций)
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+            loadTrack(currentTrackIndex);
+        }
+    
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
+            loadTrack(currentTrackIndex);
+        }
+        prevTrackButton.addEventListener('click', prevTrack);
+        nextTrackButton.addEventListener('click', nextTrack);
+    
 
-    musicPlayer.addEventListener('timeupdate', updateDisplayTime);
-    musicPlayer.addEventListener('ended', () => changeTrack(1));
-
-    // Инициализация
-    loadTrack(currentTrackIndex);
-
-    // Функции
     function loadTrack(trackIndex) {
         const track = musicTracks[trackIndex];
         musicPlayer.src = track.src;
@@ -242,27 +241,15 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function togglePlayPause() {
-        isPlaying ? musicPlayer.pause() : musicPlayer.play();
+    function playMusic() {
+        if (isPlaying) {
+            musicPlayer.pause();
+        } else {
+            musicPlayer.play();
+        }
         isPlaying = !isPlaying;
         playBtn.style.display = isPlaying ? 'none' : 'block';
         pauseBtn.style.display = isPlaying ? 'block' : 'none';
-    }
-
-    function changeTrack(direction) {
-        currentTrackIndex = (currentTrackIndex + direction + musicTracks.length) % musicTracks.length;
-        loadTrack(currentTrackIndex);
-        if (isPlaying) musicPlayer.play();
-    }
-
-    function updateDisplayTime() {
-        currentTimeElem.textContent = formatTime(musicPlayer.currentTime);
-        musicSlider.value = musicPlayer.currentTime;
-    }
-
-    function updateVolume() {
-        musicPlayer.volume = volumeSlider.value / 100;
-        document.querySelector('.volume-label').textContent = `Громкость: ${volumeSlider.value}%`;
     }
 
     function formatTime(time) {
@@ -270,6 +257,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const seconds = Math.floor(time % 60);
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     }
+
+    function updateDisplayTime() {
+        currentTimeElem.textContent = formatTime(musicPlayer.currentTime);
+        musicSlider.value = musicPlayer.currentTime;
+    }
+
+    musicPlayer.addEventListener('timeupdate', updateDisplayTime);
+playBtn.addEventListener('click', playMusic);
+    pauseBtn.addEventListener('click', playMusic);
+
+    volumeSlider.addEventListener('input', () => {
+        musicPlayer.volume = volumeSlider.value / 100;
+        document.querySelector('.volume-label').textContent = `Громкость: ${volumeSlider.value}%`;
+    });
+
+    musicSlider.addEventListener('input', () => {
+        musicPlayer.currentTime = musicSlider.value;
+    });
+
+    musicPlayer.addEventListener('ended', () => {
+        currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+        loadTrack(currentTrackIndex);
+        playMusic();
+    });
 
     // Обработка нажатий клавиш
     document.addEventListener('keydown', (event) => {
