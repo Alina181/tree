@@ -117,8 +117,24 @@ body {
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance: none; /* WebKit (Safari, Chrome) */
+  appearance: none; /* Стандартное свойство */
+  width: 2vh;
+  height: 2vh;
+  background: url("tree.png") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb { /* Firefox */
+  width: 2vh;
+  height: 2vh;
+  background: url("tree.png") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.slider::-ms-thumb { /* Internet Explorer */
   width: 2vh;
   height: 2vh;
   background: url("tree.png") no-repeat center;
