@@ -1,33 +1,47 @@
-const linkStylesheet = document.createElement('link');
-linkStylesheet.rel = 'stylesheet';
-linkStylesheet.href = 'tree.css';
+const mainRef = document.getElementsByClassName("test")[0];
+console.log(mainRef);
+
+const linkStylesheet = document.createElement("link");
+linkStylesheet.rel = "stylesheet";
+linkStylesheet.href = "tree.css";
 document.head.appendChild(linkStylesheet);
 
 // Создаем инструкцию
-const div = document.createElement('div');
-div.id = 'question-mark';
-div.textContent = '?';
-document.body.appendChild(div);
+const div = document.createElement("div");
+div.id = "question-mark";
+div.textContent = "?";
+mainRef.appendChild(div);
 
-
-const linkIcon = document.createElement('link');
-linkIcon.rel = 'icon';
-linkIcon.type = 'image/x-icon';
-linkIcon.href = './frost.ico';
+const linkIcon = document.createElement("link");
+linkIcon.rel = "icon";
+linkIcon.type = "image/x-icon";
+linkIcon.href = "./frost.ico";
 document.head.appendChild(linkIcon);
-document.addEventListener("DOMContentLoaded", function() {
-    const body = document.body;
 
+document.addEventListener("DOMContentLoaded", () => {
+    const mainRef = document.getElementsByClassName("test")[0];
+
+    // Добавление тега <audio> в DOM
+    const audioElement = document.createElement("audio");
+    audioElement.id = "music-player-audio";
+    audioElement.controls = false; // Скрываем встроенные контролы
+    audioElement.preload = "metadata";
+    mainRef.appendChild(audioElement);
+
+    const musicPlayer = document.getElementById("music-player-audio");
+
+    // Создание интерфейса плеера
     const centerImageDiv = document.createElement("div");
     centerImageDiv.className = "center-image";
-    const prevTrackButton = document.createElement("button-p");
-    prevTrackButton.id = "prev-track"; 
-    prevTrackButton.className = "arrow-button";
+
+    const prevTrackButton = document.createElement("button");
+    prevTrackButton.id = "prev-track";
+    prevTrackButton.className = "arrow-button-left";
     prevTrackButton.textContent = "❮";
 
-    const nextTrackButton = document.createElement("button-p");
-    nextTrackButton.id = "next-track"; 
-    nextTrackButton.className = "arrow-button";
+    const nextTrackButton = document.createElement("button");
+    nextTrackButton.id = "next-track";
+    nextTrackButton.className = "arrow-button-right";
     nextTrackButton.textContent = "❯";
 
     const trackTitleDiv = document.createElement("div");
@@ -35,18 +49,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const trackName = document.createElement("p");
     trackName.className = "track-name";
-    trackName.textContent = "Дискотека Авария";
+    trackName.textContent = "Трек";
 
     const trackArtist = document.createElement("p");
     trackArtist.className = "track-artist";
-    trackArtist.textContent = "Новогодняя";
+    trackArtist.textContent = "Исполнитель";
 
     trackTitleDiv.appendChild(trackName);
     trackTitleDiv.appendChild(trackArtist);
     centerImageDiv.appendChild(trackTitleDiv);
     centerImageDiv.appendChild(prevTrackButton);
     centerImageDiv.appendChild(nextTrackButton);
-
 
     const controlsDiv = document.createElement("div");
     controlsDiv.className = "controls";
@@ -65,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
     pauseButton.style.display = "none";
     pauseButton.textContent = "▐▐";
 
-    ballButtonContainer.appendChild(playButton);
-    ballButtonContainer.appendChild(pauseButton);
+    controlsDiv.appendChild(playButton);
+    controlsDiv.appendChild(pauseButton);
     controlsDiv.appendChild(ballButtonContainer);
 
     const sliderContainer = document.createElement("div");
@@ -110,240 +123,173 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderContainer.appendChild(volumeLabel);
     controlsDiv.appendChild(sliderContainer);
     centerImageDiv.appendChild(controlsDiv);
-    body.appendChild(centerImageDiv);
-});
-// Функция для отображения инструкции 
+    mainRef.appendChild(centerImageDiv);
 
-const questionMark = document.getElementById('question-mark');
-questionMark.addEventListener('click', showInstructions);
-function showInstructions() {
-    const instructionsDiv = document.getElementById('instructions');
-    if (instructionsDiv) {
-      instructionsDiv.remove();
-    } else {
-      const instructions = document.createElement('div');
-      instructions.id = 'instructions';
-      instructions.classList.add('instructions');
-      instructions.innerHTML = `
-        <h1>Инструкции по управлению плеером:</h1>
-        <ul>
-          <li><b>Enter / кнопка на главном экране "?" :</b> Показать /скрыть инструкции</li>
-          <li><b> Стрелка вправо на клавиатуре / Кнопка N на клавиатуре:</b> Следующий трек</li>
-          <li><b>Стрелка влево на клавиатуре:</b> Предыдущий трек</li>
-          <li><b>Стрелка вверх на клавиатуре:</b> Увеличить громкость</li>
-          <li><b>Стрелка вниз на клавиатуре:</b> Уменьшить громкость</li>
-          <li><b>Кнопка на клавиатуре R:</b> Случайный трек</li>
-          <li><b>Кнопка на клавиатуре E:</b> Добавить трек (формат: название;артист;ссылка)</li>
-          <li><b>Кнопка на клавиатуре S:</b> Сбросить треки на стандартные</li>
-        </ul>
-      `;
-      document.body.appendChild(instructions);
-    }
-  }
-document.addEventListener('DOMContentLoaded', () => {
-
-
-    // Обработчик касаний для мобильных устройств
-    document.addEventListener('touchmove', (event) => {
-        const touch = event.touches[0];
-        snowflakeCursor.style.left = `${touch.pageX}px`;
-        snowflakeCursor.style.top = `${touch.pageY}px`;
-    });
-
-    // Создание неоновой змейки
-    const numDots = 20;
-    const dots = [];
-    let mouseX = 0, mouseY = 0;
-
-    for (let i = 0; i < numDots; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'neon-dot';
-        document.body.appendChild(dot);
-        dots.push(dot);
-    }
-
-    function moveDots() {
-        let nextX = mouseX, nextY = mouseY;
-        dots.forEach((dot, index) => {
-            const currentX = parseFloat(dot.style.left) || 0;
-            const currentY = parseFloat(dot.style.top) || 0;
-
-            dot.style.left = `${currentX + (nextX - currentX) * 0.2}px`;
-            dot.style.top = `${currentY + (nextY - currentY) * 0.2}px`;
-            dot.style.opacity = `${1 - index / numDots}`;
-
-            nextX = currentX;
-            nextY = currentY;
-        });
-        requestAnimationFrame(moveDots);
-    }
-
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.pageX;
-        mouseY = event.pageY;
-    });
-
-    document.addEventListener('touchmove', (event) => {
-        const touch = event.touches[0];
-        mouseX = touch.pageX;
-        mouseY = touch.pageY;
-    });
-
-    moveDots();
-
-    // Логика музыкального плеера
-    const musicPlayer = document.getElementById('music-player-audio');
-    const playBtn = document.getElementById('play-button');
-    const pauseBtn = document.getElementById('pause-button');
-    const musicSlider = document.getElementById('music-slider');
-    const volumeSlider = document.getElementById('volume-slider');
-    const trackTitle = document.querySelector('.track-name');
-    const trackArtist = document.querySelector('.track-artist');
-    const currentTimeElem = document.getElementById('current-time');
-    const totalTimeElem = document.getElementById('total-time');
-    // Получаем кнопки по ID 
-    const prevTrackButton = document.getElementById('prev-track');
-    const nextTrackButton = document.getElementById('next-track');
-
+    // Переменные
     let isPlaying = false;
     let currentTrackIndex = 0;
 
     const musicTracks = [
-        { title: 'Дискотека Авария', artist: 'Новогодняя', src: 'Music/A.mp3' },
-        { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },
-        { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' },
+        { title: "Дискотека Авария", artist: "Новогодняя", src: "Music/A.mp3" },
+        { title: "Руки Вверх", artist: "С Новым Годом!", src: "Music/P.mp3" },
+        { title: "S.U.27", artist: "С Новым Годом!", src: "Music/S.mp3" },
     ];
-
-        // Обработчики кликов на кнопки (вне функций)
-        function nextTrack() {
-            currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
-            loadTrack(currentTrackIndex);
-        }
-    
-        function prevTrack() {
-            currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
-            loadTrack(currentTrackIndex);
-        }
-        prevTrackButton.addEventListener('click', prevTrack);
-        nextTrackButton.addEventListener('click', nextTrack);
-    
-
+  
+    // Загрузка трека
     function loadTrack(trackIndex) {
         const track = musicTracks[trackIndex];
+        if (!track || !track.src) {
+            alert("Ошибка загрузки трека. Попробуйте другой трек.");
+            return;
+        }
         musicPlayer.src = track.src;
-        trackTitle.textContent = track.title;
+        trackName.textContent = track.title;
         trackArtist.textContent = track.artist;
         musicPlayer.load();
 
         musicPlayer.onloadedmetadata = () => {
-            musicSlider.max = musicPlayer.duration;
-            totalTimeElem.textContent = formatTime(musicPlayer.duration);
+            musicSlider.max = musicPlayer.duration || 0;
+            totalTime.textContent = formatTime(musicPlayer.duration || 0);
+        };
+
+        musicPlayer.onerror = () => {
+            alert(`Ошибка воспроизведения трека: ${track.title}`);
+            changeTrack(1); // Переход к следующему треку
         };
     }
 
-    function playMusic() {
-        if (isPlaying) {
-            musicPlayer.pause();
-        } else {
-            musicPlayer.play();
-        }
+    // Переключение между паузой и воспроизведением
+    function togglePlayPause() {
+        isPlaying ? musicPlayer.pause() : musicPlayer.play();
         isPlaying = !isPlaying;
-        playBtn.style.display = isPlaying ? 'none' : 'block';
-        pauseBtn.style.display = isPlaying ? 'block' : 'none';
+        playButton.style.display = isPlaying ? "none" : "block";
+        pauseButton.style.display = isPlaying ? "block" : "none";
     }
 
-    function formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    // Изменение трека (вперед или назад)
+    function changeTrack(direction) {
+        currentTrackIndex = (currentTrackIndex + direction + musicTracks.length) % musicTracks.length;
+        loadTrack(currentTrackIndex);
+        if (isPlaying) musicPlayer.play();
     }
 
+    // Обновление времени трека
     function updateDisplayTime() {
-        currentTimeElem.textContent = formatTime(musicPlayer.currentTime);
+        currentTime.textContent = formatTime(musicPlayer.currentTime);
         musicSlider.value = musicPlayer.currentTime;
     }
 
-    musicPlayer.addEventListener('timeupdate', updateDisplayTime);
-playBtn.addEventListener('click', playMusic);
-    pauseBtn.addEventListener('click', playMusic);
-
-    volumeSlider.addEventListener('input', () => {
+    // Обновление громкости
+    function updateVolume() {
         musicPlayer.volume = volumeSlider.value / 100;
-        document.querySelector('.volume-label').textContent = `Громкость: ${volumeSlider.value}%`;
-    });
+        volumeLabel.textContent = `Громкость: ${volumeSlider.value}%`;
+    }
 
-    musicSlider.addEventListener('input', () => {
+    // Форматирование времени
+    function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    }
+
+    // Обработчики событий для управления плеером
+    prevTrackButton.addEventListener("click", () => changeTrack(-1));
+    nextTrackButton.addEventListener("click", () => changeTrack(1));
+    playButton.addEventListener("click", togglePlayPause);
+    pauseButton.addEventListener("click", togglePlayPause);
+    volumeSlider.addEventListener("input", updateVolume);
+    musicSlider.addEventListener("input", () => {
         musicPlayer.currentTime = musicSlider.value;
     });
 
-    musicPlayer.addEventListener('ended', () => {
-        currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+    musicPlayer.addEventListener("timeupdate", updateDisplayTime);
+    musicPlayer.addEventListener("ended", () => changeTrack(1));
+
+    // Добавление кнопок инструкции
+    const instructionDiv = document.createElement("div");
+    instructionDiv.id = "instruction";
+    instructionDiv.style.display = "none"; // Скрыто по умолчанию
+    instructionDiv.innerHTML = `
+        <div class="instruction-buttons">
+            <button id="next-track-btn">N - Следующая мелодия</button>
+            <button id="random-track-btn">R - Случайная мелодия</button>
+            <button id="default-set-btn">S - Стандартный набор</button>
+            <button id="add-track-btn">E - Добавить мелодию</button>
+        </div>
+    `;
+    mainRef.appendChild(instructionDiv);
+
+    // Показ инструкции
+    function showInstructions() {
+        instructionDiv.style.display = "block";
+    }
+
+    // Функция выбора случайного трека
+    function playRandomTrack() {
+        const randomIndex = Math.floor(Math.random() * musicTracks.length);
+        currentTrackIndex = randomIndex;
         loadTrack(currentTrackIndex);
-        playMusic();
-    });
+        if (isPlaying) musicPlayer.play();
+    }
 
-    // Обработка нажатий клавиш
-    document.addEventListener('keydown', (event) => {
-        switch (event.code) {
-            case 'Enter': // Инструкция
-            showInstructions();
-            break;
+    // Функция сброса на стандартные настройки
+    function setDefault() {
+        currentTrackIndex = 0;
+        loadTrack(currentTrackIndex);
+        musicPlayer.volume = 0.5;
+        volumeSlider.value = 50;
+        volumeLabel.textContent = "Громкость: 50%";
+    }
 
-            case 'ArrowRight': // Следующий трек
-                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
-                loadTrack(currentTrackIndex);
-                if (isPlaying) musicPlayer.play();
+    // Функция добавления трека
+    function addTrack() {
+        const userInput = prompt("Введите название, артиста и URL новой мелодии в формате 'название;артист;ссылка':");
+        if (userInput) {
+            const [title, artist, src] = userInput.split(";");
+            if (title && artist && src) {
+                musicTracks.push({ title: title.trim(), artist: artist.trim(), src: src.trim() });
+                alert("Мелодия успешно добавлена!");
+            } else {
+                alert("Некорректный формат данных. Убедитесь, что вы ввели данные в формате 'название;артист;ссылка'.");
+            }
+        }
+    }
+
+    // Обработчики кнопок инструкции
+    const nextTrackBtn = document.getElementById("next-track-btn");
+    const randomTrackBtn = document.getElementById("random-track-btn");
+    const defaultSetBtn = document.getElementById("default-set-btn");
+    const addTrackBtn = document.getElementById("add-track-btn");
+
+    nextTrackBtn.addEventListener("click", () => changeTrack(1));
+    randomTrackBtn.addEventListener("click", playRandomTrack);
+    defaultSetBtn.addEventListener("click", setDefault);
+    addTrackBtn.addEventListener("click", addTrack);
+
+    // Обработка клавиш
+    document.addEventListener("keydown", (event) => {
+        switch (event.key.toUpperCase()) {
+            case "N": // Следующий трек
+                changeTrack(1);
                 break;
-            case 'KeyN': // Следующий трек 
-                currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length; 
-                loadTrack(currentTrackIndex); 
-                if (isPlaying) musicPlayer.play(); 
-            break;               
-            case 'ArrowLeft': // Предыдущий трек
-                currentTrackIndex = (currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
-                loadTrack(currentTrackIndex);
-                if (isPlaying) musicPlayer.play();
+            case "R": // Случайный трек
+                playRandomTrack();
                 break;
-            case 'ArrowUp': // Увеличение громкости
-                volumeSlider.value = Math.min(100, parseInt(volumeSlider.value) + 10);
-                volumeSlider.dispatchEvent(new Event('input'));
+            case "S": // Стандартный набор
+                setDefault();
                 break;
-            case 'ArrowDown': // Уменьшение громкости
-                volumeSlider.value = Math.max(0, parseInt(volumeSlider.value) - 10);
-                volumeSlider.dispatchEvent(new Event('input'));
+            case "E": // Добавить трек
+                addTrack();
                 break;
-            case 'KeyR': // Случайный трек
-                currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-                loadTrack(currentTrackIndex);
-                if (isPlaying) musicPlayer.play();
-                break;
-            case 'KeyE': // Добавить трек
-            const newTrack = prompt("Введите название, артиста и URL новой мелодии в формате 'название;артист;ссылка':"); 
-            if (newTrack) { 
-                const [title, artist, src] = newTrack.split(';'); 
-                if (title && artist && src) { 
-                    musicTracks.push({ title, artist, src }); 
-                    alert(`Добавлена мелодия: ${title} - ${artist}`); 
-                } else { 
-                    alert('Неправильный формат. Используйте: название;артист;ссылка'); 
-                } 
-            } 
-                break;
-            case 'KeyS': // Сброс треков
-            musicTracks.length = 0;  // Очищаем текущий массив 
-            musicTracks.push( 
-                { title: 'Дискотека Авария', artist: 'Новогодняя', src: 'Music/A.mp3' },   
-                { title: 'Руки Вверх', artist: 'С Новым Годом!', src: 'Music/P.mp3' },   
-                { title: 'S.U.27', artist: 'С Новым Годом!', src: 'Music/S.mp3' } 
-            ); 
-            currentTrackIndex = 0;  // Сбрасываем индекс 
-            loadTrack(currentTrackIndex);  // Загружаем первую мелодию 
-            break; 
         }
     });
 
     // Инициализация
     loadTrack(currentTrackIndex);
-    document.body
-    document.body.appendChild(centerImageDiv);
+
+    // Обработчик клика по знаку вопроса для отображения/скрытия инструкции
+    document.getElementById("question-mark").addEventListener("click", () => {
+        const instructionDiv = document.getElementById("instruction");
+        instructionDiv.style.display = instructionDiv.style.display === "none" ? "block" : "none";
+    });
 });

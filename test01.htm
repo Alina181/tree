@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta charset="utf-8" />
+        <meta name="description" content="HTML5" />
+        <meta name="author" content="Пупышев В. В." />
+
+        <link rel="icon" href="wait/fav_hny.gif" type="image/gif" />
+        <link rel="shortcut icon" href="wait/fav_hny.png" type="image/gif" />
+
+        <link rel="stylesheet" href="loader02.css" />
+        <link rel="stylesheet" href="tree.css" />
+
+        <title>С Новым годом!</title>
+
+        <style>
+            body {
+                height: 100vh;
+                overflow: hidden;
+                margin: 0;
+                color: brown;
+                background-image: url("snow-globe-city-animation.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 10% 110%;
+            }
+            .main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 600px;
+                ---background: repeating-linear-gradient(45deg, green, lime 100px);
+                ---background: repeating-linear-gradient(45deg, black 0% 3%, yellow 3% 6%);
+            }
+
+            .test {
+                background: rgba(100, 250, 250, 0.5);
+                width: 90vh;
+                height: 200px;
+            }
+            .test:hover {
+                background: aqua;
+                /* width: 30%; */
+                /* height: 400px; */
+            }
+            .loaderMove {
+                position: fixed;
+                left: 10px;
+                bottom: 19px;
+                ----transition: transform 9.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                animation: x 5s linear infinite alternate, y 5s infinite cubic-bezier(0, 500, 1, 500);
+            }
+            .loaderMove:hover {
+                ----transform: translate(500px, -500px);
+            }
+
+            @keyframes x {
+                to {
+                    left: 250px;
+                }
+            }
+            @keyframes y {
+                to {
+                    bottom: 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Тест</h1>
+        <div class="main">
+            <div class="test">
+                <audio id="music-player-audio" src=""></audio>
+            </div>
+        </div>
+
+        <div class="loaderMove">
+            <span class="loader"></span>
+        </div>
+
+        <script src="tree.js"></script>
+    </body>
+</html>
