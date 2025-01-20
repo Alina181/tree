@@ -1,186 +1,163 @@
-/* Общий стиль */ 
-body {    
-  margin: 0;    
-  padding: 0;    
-  display: flex;    
-  justify-content: center;    
-  align-items: center;    
-  min-height: 100vh;    
-  background-color: #001133;    
-  font-family: Arial, sans-serif;    
-  color: #fff;    
-  overflow: hidden;   
-}    
-
-/* Контейнер плеера */ 
-.center-image {    
-  width: 90%;    
-  max-width: 700px;    
-  padding: 30px;    
-  border-radius: 60px;    
-  background: url('image.png') no-repeat center;    
-  background-size: cover;    
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);    
-  text-align: center;    
-  position: relative; /* Для позиционирования внутренних элементов */ 
-  overflow: hidden;   
-}    
-
-/* Контейнер с изображением и кнопками в левом верхнем углу */ 
-.ball-button-container {  
-  position: absolute;  
-  top: 60px;    
-  left: 20px;   
-  width: 80px;  
-  height: 80px;  
-  display: flex;  
-  justify-content: space-between;  
-  align-items: center;  
-  background: url('ball.png') no-repeat center center;  
-  background-size: contain;  
-  transform: scale(1.35);  
-  cursor: pointer;  
-}    
-
-/* Стиль для кнопок воспроизведения и паузы */ 
-.button {  
-  width: 100%;  
-  height: 100%;  
-  border: none;  
-  background-color: transparent;  
-  font-size: 1.5rem;  
-  color: rgb(142, 0, 250);  
-  position: absolute;  
-  top: 0;  
-  left: 0;  
-  cursor: pointer;  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-}  
-
-/* Стиль для кнопки воспроизведения */ 
-.play-button {  
-  display: inline-block;  
-  font-size: 2.5rem;  
-  top: 8px;    
-  left: 2.5px;  
-}  
-
-/* Стиль для кнопки паузы */ 
-.pause-button {  
-  display: inline-block;  
-  font-size: 1.6rem;  
-  top: 6px;    
-  left: -3px;  
-}  
-
-/* Заголовок трека */ 
-.track-title {    
-  text-align: left; 
-  padding-left: 100px; 
-  margin-bottom: 20px;    
-  margin-top: 60px;    
-}    
-
-.track-name {    
-  left: 10px; 
-  font-size: 1.5rem;    
-  font-weight: bold;    
-  margin-bottom: 8px;    
-}    
-
-.track-artist {    
-  font-size: 1rem;    
-  opacity: 0.8;    
-  margin: 0;    
-}    
-
-/* Ползунки */ 
-.slider-container {    
-  display: flex;    
-  align-items: center;    
-  justify-content: space-between;    
-  margin-top: 80px; 
-  margin-bottom: 5px;    
-}    
-
-.slider {    
-  flex: 1;    
-  margin: 0 15px;    
-  height: 5px;    
-  background: linear-gradient(to right, #ffd700, #1DB954);    
-  border-radius: 5px;    
-  outline: none;    
-  -webkit-appearance: none;    
-}    
-
-.slider::-webkit-slider-thumb {    
-  -webkit-appearance: none;    
-  appearance: none;    
-  width: 15px;    
-  height: 15px;    
-  background: url('tree.png') no-repeat center;    
-  background-size: contain;    
-  cursor: pointer;    
-} 
-
-.slider::-moz-range-thumb { 
-  width: 15px; 
-  height: 15px; 
-  background: url('tree.png') no-repeat center; 
-  background-size: contain; 
-  cursor: pointer; 
-  border: none; 
-} 
-
-.slider::-ms-thumb { 
-  width: 15px; 
-  height: 15px; 
-  background: url('tree.png') no-repeat center; 
-  background-size: contain; 
-  cursor: pointer; 
-  border: none; 
-} 
-
-#time-label, #volume-label {    
-  font-size: 0.8rem;    
-} 
-
-@media (max-width:400px), (max-height:735px) {  
-  .slider-container {    
-    display:inline; 
-    width: 1%; 
-  } 
-  .slider { 
-    width: 145px; 
-  } 
-  .slider::-webkit-slider-thumb, 
-  .slider::-moz-range-thumb { 
-    top: 30px; 
-  } 
-  #time-label, #volume-label {    
-    top: 10px; 
-    font-size: 0.8rem;    
-  } 
-  
+/* Общий стиль */
+body {   
+  margin: 0;   
+  padding: 0;   
+  display: flex;   
+  justify-content: center;   
+  align-items: center;   
+  min-height: 100vh;   
+  background-color: #001133;   
+  font-family: Arial, sans-serif;   
+  color: #fff;   
+  overflow: hidden;  
 }   
-@media (max-width:426px), (max-height:655px) {  
 
-}
+/* Контейнер плеера */
+.center-image {   
+  width: 90%;   
+  max-width: 700px;   
+  padding: 30px;   
+  border-radius: 60px;   
+  background: url('image.png') no-repeat center;   
+  background-size: cover;   
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);   
+  text-align: center;   
+  position: relative; /* Для позиционирования внутренних элементов */ 
+}   
 
-/* Неоновая змейка */   
-.neon-dot {   
-  position: absolute;   
-  width: 5px;   
+/* Контейнер с изображением и кнопками в левом верхнем углу */
+.ball-button-container { 
+  position: absolute; 
+  top: 60px;    /* Располагаем в левом верхнем углу */ 
+  left: 20px;   /* Расстояние от левого края */ 
+  width: 80px;  /* Размер контейнера с шаром */ 
+  height: 80px; /* Размер контейнера с шаром */ 
+  display: flex; /* Чтобы кнопки расположились рядом друг с другом */ 
+  justify-content: space-between; 
+  align-items: center; 
+  background: url('ball.png') no-repeat center center; 
+  background-size: contain; /* Масштабируем изображение */ 
+  transform: scale(1.35); /* Увеличиваем изображение на 35% */ 
+  cursor: pointer;  /* Курсор при наведении */ 
+}   
+
+/* Стиль для кнопок воспроизведения и паузы */
+.button { 
+  width: 100%;  /* Заполняем весь контейнер */ 
+  height: 100%; /* Заполняем весь контейнер */ 
+  border: none; 
+  background-color: transparent; 
+  font-size: 1.5rem; 
+  color: rgb(142, 0, 250); 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  cursor: pointer; 
+  display: flex; /* Центрируем внутри контейнера */ 
+  justify-content: center; 
+  align-items: center; 
+} 
+
+/* Стиль для кнопки воспроизведения */
+.play-button { 
+  display: inline-block; 
+  font-size: 2.5rem; /* Сделать символ воспроизведения больше */ 
+  top: 8px;    /* Располагаем в левом верхнем углу */ 
+  left: 2.5px; 
+} 
+
+/* Стиль для кнопки паузы */
+.pause-button { 
+  display: inline-block; 
+  font-size: 1.6rem; /* Сделать символ паузы больше */ 
+  top: 6px;    /* Располагаем в левом верхнем углу */ 
+  left: -3px; 
+} 
+
+/* Заголовок трека */
+.track-title {   
+  text-align: left; /* Выравниваем текст влево */
+  padding-left: 100px; /* Добавляем отступ слева */
+  margin-bottom: 20px;   
+  margin-top: 60px;   
+
+}   
+
+.track-name {   
+  left: 10px;
+  font-size: 1.5rem;   
+  font-weight: bold;   
+  margin-bottom: 8px;   
+}   
+
+.track-artist {   
+  font-size: 1rem;   
+  opacity: 0.8;   
+  margin: 0;   
+}   
+
+/* Ползунки */
+.slider-container {   
+  display: flex;   
+  align-items: center;   
+  justify-content: space-between;   
+  margin-top: 80px; /* Добавляем отступ сверху, чтобы ползунки сдвинулись ниже */
+  margin-bottom: 5px;   
+}   
+
+.slider {   
+  flex: 1;   
+  margin: 0 15px;   
   height: 5px;   
-  background-color: #fff;   
-  border-radius: 50%;   
-  opacity: 0;   
-  pointer-events: none;   
-  transition: all 0.2s ease;   
+  background: linear-gradient(to right, #ffd700, #1DB954);   
+  border-radius: 5px;   
+  outline: none;   
+  -webkit-appearance: none;   
+}   
+
+.slider::-webkit-slider-thumb {   
+  -webkit-appearance: none;   
+  appearance: none;   
+  width: 15px;   
+  height: 15px;   
+  background: url('tree.png') no-repeat center;   
+  background-size: contain;   
+  cursor: pointer;   
 }
 
+#time-label, #volume-label {   
+  font-size: 0.8rem;   
+}
+ @media (max-width:400px) , (max-height:735px) {  
+  .slider {
+  width: 5px; /* Устанавливаем ширину для вертикального слайдера */
+}
+.slider::-webkit-slider-thumb {
+  top: 30px;
+}
+ }
+
+ /* Снежинка-курс */  
+.snowflake-cursor {  
+  position: absolute;  
+  width: 20px;  
+  height: 20px;  
+  background: url('1.png') no-repeat center;  
+  background-size: contain;  
+  pointer-events: none;  
+}  
+
+/* Неоновая змейка */  
+.neon-dot {  
+  position: absolute;  
+  width: 5px;  
+  height: 5px;  
+  background-color: #fff;  
+  border-radius: 50%;  
+  opacity: 0;  
+  pointer-events: none;  
+  transition: all 0.2s ease;  
+}  
 
 .instructions {
   font-size: .9rem;    
